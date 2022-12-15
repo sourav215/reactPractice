@@ -9,9 +9,9 @@ function User2({ data, sendData }) {
 
   return (
     <div>
-      <h1>Client Component</h1>
+      <h1>Server Component</h1>
       <div>
-        <h4>Server:  "{data}"</h4>
+        <h4>Client:  "{data}"</h4>
       </div>
       <div>
         <input
