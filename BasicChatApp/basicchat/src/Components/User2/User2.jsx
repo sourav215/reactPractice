@@ -1,6 +1,8 @@
 import { useState } from "react";
+
 function User2({ data, sendData }) {
   const [ip, setIp] = useState("");
+
   const sendToParent = () => {
     sendData(ip);
   };
@@ -9,7 +11,7 @@ function User2({ data, sendData }) {
     <div>
       <h1>Client Component</h1>
       <div>
-        <h4>Server: "{data}"</h4>
+        <h4>Server:  "{data}"</h4>
       </div>
       <div>
         <input
