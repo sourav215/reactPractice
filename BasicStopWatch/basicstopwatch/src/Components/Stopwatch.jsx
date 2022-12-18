@@ -1,7 +1,8 @@
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 function Stopwatch() {
   const [count, setCount] = useState(10);
   let countId = useRef();
+
   const startInterval = () => {
     countId.current = setInterval(() => {
       setCount((prev) => {
@@ -12,7 +13,7 @@ function Stopwatch() {
           return prev - 1;
         }
       });
-    },1000);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -25,8 +26,15 @@ function Stopwatch() {
       <h1>Timer</h1>
       <h1>{count}</h1>
       <button onClick={startInterval}>Start</button>
-      <button onClick={()=> clearInterval(countId.current)}>Pause</button>
-      <button >Reset</button>
+      <button onClick={() => clearInterval(countId.current)}>Pause</button>
+      <button
+        onClick={() => {
+          clearInterval(countId.current);
+          setCount(10);
+        }}
+      >
+        Reset
+      </button>
     </div>
   );
 }
