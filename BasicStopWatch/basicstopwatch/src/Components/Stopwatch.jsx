@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 function Stopwatch() {
   const [count, setCount] = useState(10);
-  let countId;
+  let countId = useRef();
   const startInterval = () => {
-    countId = setInterval(() => {
+    countId.current = setInterval(() => {
       setCount((prev) => {
         if (prev === 0) {
-          clearInterval(countId);
+          clearInterval(countId.current);
           return prev;
         } else {
           return prev - 1;
@@ -16,17 +16,17 @@ function Stopwatch() {
   };
 
   useEffect(() => {
-    startInterval();
-    return () => clearInterval(countId);
+    // startInterval();
+    return () => clearInterval(countId.current);
   }, []);
 
   return (
     <div>
       <h1>Timer</h1>
       <h1>{count}</h1>
-      <button>Start</button>
-      <button>Pause</button>
-      <button onClick={startInterval}>Reset</button>
+      <button onClick={startInterval}>Start</button>
+      <button onClick={()=> clearInterval(countId.current)}>Pause</button>
+      <button >Reset</button>
     </div>
   );
 }
