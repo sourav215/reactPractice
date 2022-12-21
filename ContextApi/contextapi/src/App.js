@@ -6,8 +6,8 @@ import { useState } from "react";
 import loginContext from "./Components/RegUser/LoginContext";
 function App() {
   const [userDetails, setUserDetails] = useState({
-    user: "",
-    loginStatus: "",
+    user: "Guest",
+    loginStatus: false,
   });
   return (
     <div className="App">

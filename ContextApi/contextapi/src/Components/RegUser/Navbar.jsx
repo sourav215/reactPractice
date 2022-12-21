@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import loginContext from "./LoginContext";
+
 function Navbar() {
+  const userData = useContext(loginContext);
+
   const navStyle = {
     display: "flex",
     justifyContent: "space-between",
@@ -11,14 +16,14 @@ function Navbar() {
       <div>
         <span style={{ fontSize: "25px" }}>React</span>
       </div>
-      <div >
+      <div>
         <a href="#">Home</a>
         <a href="#">Profile</a>
         <a href="#">Product</a>
       </div>
       <div>
         <span style={{ marginRight: "30px", color: "#fff", fontSize: "20px" }}>
-          Guest
+          {userData.user}
         </span>
         <button
           style={{
@@ -28,7 +33,6 @@ function Navbar() {
             fontSize: "16px",
             padding: "5px 10px",
             letterSpacing: "1px",
-            
           }}
         >
           Logout
