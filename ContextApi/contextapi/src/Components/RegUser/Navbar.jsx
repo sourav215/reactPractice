@@ -2,7 +2,7 @@ import { useContext } from "react";
 import loginContext from "./LGNContext";
 
 function Navbar() {
-  const userData = useContext(loginContext);
+  const {userDetails} = useContext(loginContext);
 
   const navStyle = {
     display: "flex",
@@ -23,7 +23,7 @@ function Navbar() {
       </div>
       <div>
         <span style={{ marginRight: "30px", color: "#fff", fontSize: "20px" }}>
-          {userData.user}
+          {userDetails.user}
         </span>
         <button
           style={{

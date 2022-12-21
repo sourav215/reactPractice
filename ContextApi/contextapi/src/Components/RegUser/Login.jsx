@@ -1,19 +1,26 @@
 import { useState } from "react";
-
+import { useContext } from "react";
+import loginContext from "./LGNContext";
 function Login() {
   const [inputData, setInputData] = useState({
     name: "",
     password: "",
   });
-
+  const { fnLoggedIn } = useContext(loginContext);
   const handleValuedInput = (e) => {
-    setInputData ({...inputData, [e.target.name]: e.target.value})
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(inputData);
-
-  }
+    if(inputData.name == "Sourav" && inputData.password == "1234"){
+        fnLoggedIn ({
+            user: "Sourav",
+            loginStatus: true,
+          })
+    }else{
+        alert ("Wrong Credential!");
+    }
+  };
 
   const loginStyle = {
     width: "400px",

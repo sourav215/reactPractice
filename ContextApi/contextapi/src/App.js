@@ -9,10 +9,14 @@ function App() {
     user: "Guest",
     loginStatus: false,
   });
+
+  const fnLoggedIn = (d) => {
+    setUserDetails(d);
+  };
   return (
     <div className="App">
       {/* <A /> */}
-      <loginContext.Provider value={userDetails}>
+      <loginContext.Provider value={{userDetails, fnLoggedIn}}>
         <Navbar />
         <Auth />
       </loginContext.Provider>
