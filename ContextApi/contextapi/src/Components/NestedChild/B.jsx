@@ -1,3 +1,5 @@
+import C from "./C";
+
 function B() {
   return (
     <div
@@ -9,6 +11,7 @@ function B() {
       }}
     >
       <h1>B Component</h1>
+      <C />
     </div>
   );
 }
