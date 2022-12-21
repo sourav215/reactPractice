@@ -9,6 +9,12 @@ function D() {
       }}
     >
       <h1>D Component</h1>
+      <dl>
+        <dt>Name</dt>
+        <dd>{"sourav"}</dd>
+        <dt>City</dt>
+        <dd>{"kolkata"}</dd>
+      </dl>
     </div>
   );
 }

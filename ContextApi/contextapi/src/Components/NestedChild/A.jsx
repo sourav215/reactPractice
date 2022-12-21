@@ -1,6 +1,12 @@
 import B from "./B";
-
+import { useState } from "react";
+import ncContext from "./NCcontext";
 function A() {
+  const [state, useState] = useState({
+      name: "Sourabh",
+      email: "sourabh@gmail.com",
+      city: "Kolkata"
+  })
   return (
     <div
       style={{
@@ -11,7 +17,9 @@ function A() {
       }}
     >
       <h1>A Component</h1>
-      <B />
+      <ncContext.Provider value={state}>
+        <B />
+      </ncContext.Provider>
     </div>
   );
 }
