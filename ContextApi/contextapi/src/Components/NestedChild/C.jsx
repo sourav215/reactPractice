@@ -1,18 +1,15 @@
-import B from "./B";
-
-function A() {
+function C() {
   return (
     <div
       style={{
-        width: "1000px",
+        width: "600px",
         padding: "20px",
         margin: "50px auto",
         border: "1px solid teal",
       }}
     >
-      <h1>A Component</h1>
-      <B />
+      <h1>C Component</h1>
     </div>
   );
 }
-export default A;
+export default C;
