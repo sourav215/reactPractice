@@ -2,7 +2,7 @@ import { useContext } from "react";
 import loginContext from "./LGNContext";
 
 function Navbar() {
-  const {userDetails} = useContext(loginContext);
+  const { userDetails, fnLogout } = useContext(loginContext);
 
   const navStyle = {
     display: "flex",
@@ -11,17 +11,28 @@ function Navbar() {
     color: "#fff",
     padding: "20px",
   };
+  const astyle = {
+    color: "#fff",
+    textDecoration: "none",
+    marginRight: "50px",
+    // textAlign: "right",
+  };
   return (
     <div style={navStyle}>
       <div>
         <span style={{ fontSize: "25px" }}>React</span>
       </div>
       <div>
-        <a href="#">Home</a>
-        <a href="#">Profile</a>
-        <a href="#">Product</a>
-      </div>
-      <div>
+        <a href="#" style={astyle}>
+          Home
+        </a>
+        <a href="#" style={astyle}>
+          Profile
+        </a>
+        <a href="#" style={astyle}>
+          Product
+        </a>
+
         <span style={{ marginRight: "30px", color: "#fff", fontSize: "20px" }}>
           {userDetails.user}
         </span>
@@ -33,6 +44,9 @@ function Navbar() {
             fontSize: "16px",
             padding: "5px 10px",
             letterSpacing: "1px",
+          }}
+          onClick={() => {
+            fnLogout();
           }}
         >
           Logout
