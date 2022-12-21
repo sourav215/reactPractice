@@ -1,13 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import A from "./Components/NestedChild/A";
-import Login from "./Components/RegUser/Login";
+import Auth from "./Components/RegUser/Auth";
 
 function App() {
   return (
     <div className="App">
       {/* <A /> */}
-      <Login/>
+      <Auth />
     </div>
   );
 }
