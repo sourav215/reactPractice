@@ -4,7 +4,9 @@ import { useContext } from "react";
 import loginContext from "./LGNContext";
 function Auth() {
   const userData = useContext(loginContext);
-  const { user, loginStatus } = userData;
+  const {
+    userDetails: { user, loginStatus },
+  } = userData;
   return <div>{loginStatus ? <Home /> : <Login />}</div>;
 }
 
