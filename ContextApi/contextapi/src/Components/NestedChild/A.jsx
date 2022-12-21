@@ -2,7 +2,7 @@ import B from "./B";
 import { useState } from "react";
 import ncContext from "./NCcontext";
 function A() {
-  const [state, useState] = useState({
+  const [state, setState] = useState({
       name: "Sourabh",
       email: "sourabh@gmail.com",
       city: "Kolkata"

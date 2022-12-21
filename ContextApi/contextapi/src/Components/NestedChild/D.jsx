@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import ncContext from "./NCcontext";
 function D() {
+    const contextData = useContext(ncContext);
+    console.log(contextData);
+
   return (
     <div
       style={{
