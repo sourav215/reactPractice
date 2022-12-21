@@ -1,18 +1,15 @@
-import D from "./D";
-
-function C() {
+function D() {
   return (
     <div
       style={{
-        width: "600px",
+        width: "400px",
         padding: "20px",
         margin: "50px auto",
         border: "1px solid teal",
       }}
     >
-      <h1>C Component</h1>
-      <D />
+      <h1>D Component</h1>
     </div>
   );
 }
-export default C;
+export default D;
