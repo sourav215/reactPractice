@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import loginContext from "./LoginContext";
+import loginContext from "./LGNContext";
 
 function Navbar() {
   const userData = useContext(loginContext);

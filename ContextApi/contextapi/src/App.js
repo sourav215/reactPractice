@@ -3,7 +3,7 @@ import A from "./Components/NestedChild/A";
 import Auth from "./Components/RegUser/Auth";
 import Navbar from "./Components/RegUser/Navbar";
 import { useState } from "react";
-import loginContext from "./Components/RegUser/LoginContext";
+import loginContext from "./Components/RegUser/LGNContext";
 function App() {
   const [userDetails, setUserDetails] = useState({
     user: "Guest",
