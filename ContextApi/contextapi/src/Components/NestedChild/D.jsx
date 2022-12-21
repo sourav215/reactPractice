@@ -2,7 +2,7 @@ function D() {
   return (
     <div
       style={{
-        width: "400px",
+        width: "500px",
         padding: "20px",
         margin: "50px auto",
         border: "1px solid teal",

@@ -4,7 +4,7 @@ function A() {
   return (
     <div
       style={{
-        width: "1000px",
+        width: "800px",
         padding: "20px",
         margin: "50px auto",
         border: "1px solid teal",

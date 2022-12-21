@@ -4,7 +4,7 @@ function B() {
   return (
     <div
       style={{
-        width: "800px",
+        width: "700px",
         padding: "20px",
         margin: "50px auto",
         border: "1px solid teal",
