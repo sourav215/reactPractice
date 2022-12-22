@@ -1,0 +1,29 @@
+.container {
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px black;
+}
+
+.leftcontainer {
+  width: 30%;
+  height: 300px;
+}
+.rightcontainer {
+  width: 70%;
+  height: 500px;
+  background-color: #ECF0F1;
+}
+
+.leftcontainer > div {
+  padding: 20px;
+  margin-bottom: 5px;
+  background-color: #515a5a;
+}
+.leftcontainer > div > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
