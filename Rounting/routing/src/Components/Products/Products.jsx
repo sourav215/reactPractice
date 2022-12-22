@@ -1,5 +1,6 @@
 import pd from "./Products.module.css";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+
 function Products() {
   return (
     <div>
@@ -7,10 +8,10 @@ function Products() {
       <div className={pd.container}>
         <div className={pd.leftcontainer}>
           <div>
-            <Link to="#">Electronics</Link>
+            <Link to="electronics">Electronics</Link>
           </div>
           <div>
-            <Link to="#">Jewellery</Link>
+            <Link to="jewellery">Jewellery</Link>
           </div>
           <div>
             <Link to="#">Mens</Link>
@@ -20,7 +21,10 @@ function Products() {
           </div>
         </div>
         <div className={pd.rightcontainer}>
-          <div>{/* Show All Products Here */}</div>
+          <div>
+            {/* Show All Products Here */}
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>
