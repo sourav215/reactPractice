@@ -5,7 +5,7 @@ function Navbar() {
       <div>
         <span>React</span>
       </div>
-      <div>
+      <div >
         <a href="">Home</a>
         <a href="">Profile</a>
         <a href="">Todo</a>
