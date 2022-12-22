@@ -6,11 +6,11 @@ function Navbar() {
         <span>React</span>
       </div>
       <div >
-        <a href="">Home</a>
-        <a href="">Profile</a>
-        <a href="">Todo</a>
-        <a href="">Products</a>
-        <a href="">Counter</a>
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/todo">Todo</a>
+        <a href="/products">Products</a>
+        <a href="/counter">Counter</a>
       </div>
     </div>
   );

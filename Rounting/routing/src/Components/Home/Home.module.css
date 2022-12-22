@@ -1,0 +1,12 @@
+.home {
+  background-image: url("https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWluaW1hbGlzdCUyMHdhbGxwYXBlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60");
+  height: 800px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  padding: 20px;
+}
+.home > div {
+  width: 1200px;
+  margin: 50px auto;
+}
