@@ -5,6 +5,13 @@ function Counter() {
   return (
     <div>
       <h1>Counter Component</h1>
+      <button
+        onClick={() => {
+          setSearchparam({ filter: "camera" });
+        }}
+      >
+        Set New Params
+      </button>
     </div>
   );
 }
