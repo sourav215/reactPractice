@@ -23,17 +23,17 @@ function Jewellery() {
             style={{
               listStyleType: "none",
               textAlign: "left",
-              fontSize: "20px",
+              fontSize: "24px",
             }}
           >
             {jdata.map((ele, i) => {
               return (
-                <Link
+                <Link to="/productDetails"
                   style={{
                     textDecoration: "none",
                     color: "teal",
                     display: "block",
-                    marginBottom: "20px",
+                    marginBottom: "25px",
                   }}
                 >
                   <li key={i}>{ele.title}</li>
