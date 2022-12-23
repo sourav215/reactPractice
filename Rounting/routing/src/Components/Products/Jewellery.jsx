@@ -28,7 +28,9 @@ function Jewellery() {
           >
             {jdata.map((ele, i) => {
               return (
-                <Link to="/productDetails"
+                <Link
+                  to="/productDetails"
+                  key={i}
                   style={{
                     textDecoration: "none",
                     color: "teal",
@@ -36,7 +38,7 @@ function Jewellery() {
                     marginBottom: "25px",
                   }}
                 >
-                  <li key={i}>{ele.title}</li>
+                  <li>{ele.title}</li>
                 </Link>
               );
             })}

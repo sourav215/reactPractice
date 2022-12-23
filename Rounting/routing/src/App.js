@@ -6,6 +6,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import Electronics from "./Components/Products/Electronics";
 import Jewellery from "./Components/Products/Jewellery";
+import ProductDetails from "./Components/Products/ProductDetails";
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
           <Route path="electronics" element={<Electronics />} />
           <Route path="jewellery" element={<Jewellery />} />
         </Route>
+        <Route path="/productDetails" element={<ProductDetails />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
