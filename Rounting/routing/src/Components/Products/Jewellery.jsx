@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import ProductDetails from "./ProductDetails";
 
 function Jewellery() {
   const [jdata, setJData] = useState([]);
@@ -28,8 +29,8 @@ function Jewellery() {
           >
             {jdata.map((ele, i) => {
               return (
-                <Link
-                  to="/productDetails"
+                <NavLink
+                  to={`/productdetails/${ele.id}`}
                   key={i}
                   style={{
                     textDecoration: "none",
@@ -39,7 +40,7 @@ function Jewellery() {
                   }}
                 >
                   <li>{ele.title}</li>
-                </Link>
+                </NavLink>
               );
             })}
           </ul>
