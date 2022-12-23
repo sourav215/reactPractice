@@ -7,6 +7,7 @@ import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import Electronics from "./Components/Products/Electronics";
 import Jewellery from "./Components/Products/Jewellery";
 import ProductDetails from "./Components/Products/ProductDetails";
+import Counter from "./Components/Counter/Counter";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           <Route path="jewellery" element={<Jewellery />} />
         </Route>
         <Route path="/productdetails/:id" element={<ProductDetails />}></Route>
+        <Route path="/counter" element={<Counter />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
