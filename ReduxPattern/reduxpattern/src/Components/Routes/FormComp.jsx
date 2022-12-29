@@ -1,12 +1,16 @@
 import taskAction from "../Redux/Action";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 function FormComp() {
   const [inputState, setInputState] = useState({
     task: "",
     status: false,
   });
+  const dispatch = useDispatch();
+
   const handleSubmit = () => {
-    taskAction(inputState);
+    // taskAction(inputState);
+    taskAction(inputState,dispatch);
   };
   return (
     <div style={{ padding: "100px" }}>
