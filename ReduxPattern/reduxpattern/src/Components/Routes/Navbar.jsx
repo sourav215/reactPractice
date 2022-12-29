@@ -26,9 +26,7 @@ function Navbar() {
         <Link to={"/"} style={astyle}>
           Home
         </Link>
-        <a href="#" style={astyle}>
-          Profile
-        </a>
+        <Link to={"/redux"} style={astyle}>Redux</Link>
         <a href="#" style={astyle}>
           Product
         </a>

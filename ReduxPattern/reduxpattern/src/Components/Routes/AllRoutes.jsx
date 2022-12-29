@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Input from "../Redux/Input";
 import Home from "./Home";
 import Navbar from "./Navbar";
 
@@ -8,7 +9,7 @@ function AllRoutes() {
       <Navbar />
       <Routes>
         <Route path={"/"} element={<Home />} />
-        {/* <Route path={"/"} element={} /> */}
+        <Route path={"/redux"} element={<Input/>} />
       </Routes>
     </div>
   );
