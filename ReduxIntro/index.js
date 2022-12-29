@@ -6,5 +6,6 @@ function incCount(data) {
 
 function decCount() {}
 
-
+console.log(myStore.getState());
+incCount(5);
 console.log(myStore.getState());
