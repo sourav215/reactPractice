@@ -29,9 +29,7 @@ function Navbar() {
         <Link to={"/redux"} style={astyle}>
           Redux
         </Link>
-        <Link to={"/display"} style={astyle}>
-          Display
-        </Link>
+        
         <a href="#" style={astyle}>
           Product
         </a>
