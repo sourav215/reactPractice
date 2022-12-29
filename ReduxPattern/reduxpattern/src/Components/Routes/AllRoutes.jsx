@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Input from "../Redux/Input";
+import Input from "./Input";
 import Home from "./Home";
 import Navbar from "./Navbar";
 
