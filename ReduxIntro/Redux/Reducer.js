@@ -5,3 +5,5 @@ const defaultState = {
 const myReducer = (state = defaultState, action) => {
     return state
 }
+
+export default myReducer;
