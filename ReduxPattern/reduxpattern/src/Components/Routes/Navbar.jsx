@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
 function Navbar() {
-
+  const fnLogout = () => {
+    console.log("ljdf");
+  };
   const navStyle = {
     display: "flex",
     justifyContent: "space-between",
@@ -21,7 +23,9 @@ function Navbar() {
         <span style={{ fontSize: "25px" }}>React</span>
       </div>
       <div>
-        <Link to={"/"} style={astyle}>Home</Link>
+        <Link to={"/"} style={astyle}>
+          Home
+        </Link>
         <a href="#" style={astyle}>
           Profile
         </a>
@@ -29,9 +33,9 @@ function Navbar() {
           Product
         </a>
 
-        <span style={{ marginRight: "30px", color: "#fff", fontSize: "20px" }}>
+        {/* <span style={{ marginRight: "30px", color: "#fff", fontSize: "20px" }}>
           {userDetails.user}
-        </span>
+        </span> */}
         <button
           style={{
             marginRight: "50px",
