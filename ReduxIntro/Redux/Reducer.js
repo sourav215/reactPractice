@@ -7,6 +7,10 @@ const myReducer = (state = defaultState, action) => {
         state = {
             ...state, count: state.count + action.payload
         }
+    }else if(action.type === "SUBS") {
+        state = {
+            ...state, count : state.count - action.payload
+        }
     }
     return state
 }
