@@ -6,6 +6,6 @@ const taskAction = (task) => {
         type: "ADD",
         payload: task
     })
-    console.log(reduxStore.getState());
+    // console.log(reduxStore.getState());
 }
 export default taskAction;

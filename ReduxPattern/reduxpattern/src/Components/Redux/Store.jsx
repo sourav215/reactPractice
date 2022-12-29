@@ -1,5 +1,7 @@
-import { legacy_createStore as createStore } from "redux";
+import { legacy_createStore as createStore, applyMiddleware } from "redux";
 import taskReducer from "./TaskReducer";
-const reduxStore = createStore(taskReducer);
+import { logger } from "redux-logger";
+
+const reduxStore = createStore(taskReducer, applyMiddleware(logger));
 
 export default reduxStore;

@@ -1,6 +1,6 @@
 import taskAction from "../Redux/Action";
 import { useState } from "react";
-
+import DisplayTask from "./DisplayTask";
 function Input() {
   const [inputState, setInputState] = useState({
     task: "",
@@ -20,6 +20,7 @@ function Input() {
         }}
       />
       <button onClick={handleSubmit}>Submit</button>
+      
     </div>
   );
 }
