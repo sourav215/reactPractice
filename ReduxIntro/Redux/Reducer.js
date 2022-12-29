@@ -3,6 +3,11 @@ const defaultState = {
 }
 
 const myReducer = (state = defaultState, action) => {
+    if (action.type === "ADD") {
+        state = {
+            ...state, count: state.count + action.payload
+        }
+    }
     return state
 }
 
