@@ -2,9 +2,12 @@ import taskAction from "../Redux/Action";
 import { useState } from "react";
 
 function Input() {
-  const [inputState, setInputState] = useState("");
+  const [inputState, setInputState] = useState({
+    task: "",
+    status: false,
+  });
   const handleSubmit = () => {
-    console.log(inputState);
+    taskAction(inputState);
   };
   return (
     <div style={{ padding: "100px" }}>
@@ -13,7 +16,7 @@ function Input() {
         type="text"
         placeholder="Enter task here ..."
         onChange={(e) => {
-          setInputState(e.target.value);
+          setInputState({ ...inputState, task: e.target.value });
         }}
       />
       <button onClick={handleSubmit}>Submit</button>
