@@ -1,14 +1,16 @@
 import lgnstl from "./Login.module.css";
-import { Flex, Box, Spacer } from "@chakra-ui/react";
+import { Flex, Box, Spacer, Input } from "@chakra-ui/react";
 function Login() {
   return (
     <div>
       <h1>Login Component</h1>
-      <div className={lgnstl.container}>
-        <div>left Div</div>
-        <div>Right Div</div>
-      </div>
-      
+     
+
+      {/* <Flex bg="gray.100" align="center" justify="center" h="50vh">
+        <Box bg="white" p={10} rounded="md" w={450}>
+            <img src="https://static.pbcdn.in/cdn/images/new-home/logopb.svg?v=2" alt="policybazaarlogo" align="center"/>
+        </Box>
+      </Flex> */}
     </div>
   );
 }
