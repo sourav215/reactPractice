@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.container > div:first-child {
+  width: 60%;
+  border: 1px solid red;
+}
+.container > div:last-child {
+  width: 40%;
+  border: 1px solid red;
+}
