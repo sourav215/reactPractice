@@ -14,17 +14,17 @@ import {
 function SignupForm() {
   const [signupState, setsignupState] = useState({
     name: "",
-    phoneNumber: "",    
+    phoneNumber: "",
     password: "",
   });
 
-  const handleLoginInput = (e) => {
+  const handleSignupInput = (e) => {
     setsignupState({
       ...signupState,
       [e.target.name]: e.target.value,
     });
   };
-  const handleLoginSubmit = (e) => {
+  const handleSignupFormSubmit = (e) => {
     if (signupState.phoneNumber.length != 10) {
       alert("Enter correct number");
       return;
@@ -60,6 +60,18 @@ function SignupForm() {
             <FormErrorMessage>Invalid Phone Number</FormErrorMessage>
           )}
         </FormControl>
+
+        <Input
+          type={"text"}
+          placeholder="Enter Your Name"
+          maxlength="20"
+          name="name"
+          onChange={handleSignupInput}
+        ></Input>
+        {signupState.name.length == 0 && (
+          <FormHelperText>* Name is required</FormHelperText>
+        )}
+        
         <FormControl
           isInvalid={
             signupState.password.length > 0 && signupState.password.length < 4
@@ -70,7 +82,7 @@ function SignupForm() {
             placeholder="Enter Password"
             maxlength="10"
             name="password"
-            onChange={handleLoginInput}
+            onChange={handleSignupInput}
           ></Input>
 
           <FormErrorMessage>
@@ -81,7 +93,7 @@ function SignupForm() {
           type="submit"
           colorScheme="blue"
           w="full"
-          onClick={handleLoginSubmit}
+          onClick={handleSignupFormSubmit}
         >
           Sign in with Password
         </Button>
