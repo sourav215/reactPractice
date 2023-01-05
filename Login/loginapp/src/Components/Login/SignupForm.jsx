@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 
 function SignupForm() {
-    const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
@@ -33,22 +33,34 @@ function SignupForm() {
     } else if (inputState.password.length < 4) {
       alert("Enter correct password");
       return;
+    } else if (hasAlreadyRegistered()) {
+      alert("User has already registered");
     } else {
       alert("successful");
     }
   };
-  const postData =async () => {
-    try {
-        let res = await fetch(`http://localhost:8080/regUser`, {
-            method: "POST",
-            body: JSON.stringify(inputState),
-            headers: { "Content-type": "application/json" }, 
-        });
-        
-      } catch (error) {
-        console.log(error);
+  const hasAlreadyRegistered = () => {
+    let present = false;
+    allUsers.map(({ phoneNumber }) => {
+      if (phoneNumber === inputState.phoneNumber) {
+        present = true;
       }
-  }
+    });
+    return present;
+  };
+  const postData = async () => {
+    try {
+      setIsLoading(true);
+      let res = await fetch(`http://localhost:8080/regUser`, {
+        method: "POST",
+        body: JSON.stringify(inputState),
+        headers: { "Content-type": "application/json" },
+      });
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const getAllUser = async () => {
     try {
       let res = await fetch(`http://localhost:8080/regUser`);
@@ -61,7 +73,7 @@ function SignupForm() {
   };
 
   useEffect(() => {
-    // getAllUser();
+    getAllUser();
   }, []);
   return (
     <div>
