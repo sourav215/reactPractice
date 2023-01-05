@@ -11,7 +11,7 @@ import {
   FormHelperText,
 } from "@chakra-ui/react";
 
-function SignupForm() {
+function SignupForm({ gotoPrevious }) {
   const [isLoading, setIsLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
@@ -35,8 +35,11 @@ function SignupForm() {
       return;
     } else if (hasAlreadyRegistered()) {
       alert("User has already registered");
+      gotoPrevious();
     } else {
-      alert("successful");
+      postData();
+      //   alert("successful");
+      //   gotoPrevious();
     }
   };
   const hasAlreadyRegistered = () => {
@@ -57,6 +60,8 @@ function SignupForm() {
         headers: { "Content-type": "application/json" },
       });
       setIsLoading(false);
+      alert("successful");
+      gotoPrevious();
     } catch (error) {
       console.log(error);
     }

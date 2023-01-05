@@ -18,10 +18,22 @@
   },
   "regUser": [
     {
-      "id":1,
+      "id": 1,
       "phoneNumber": "6290807540",
       "name": "Sourabh",
       "password": "sou@754"
+    },
+    {
+      "phoneNumber": "9735939329",
+      "name": "eve.holt@reqres.in",
+      "password": "khdfsd",
+      "id": 2
+    },
+    {
+      "phoneNumber": "9743797484",
+      "name": "eve.holt@reqres.in",
+      "password": "sdfsdf",
+      "id": 3
     }
   ]
 }

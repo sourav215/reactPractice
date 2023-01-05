@@ -39,7 +39,11 @@ function Login() {
           </div>
         </div>
 
-        {page ? <LoginForm /> : <SignupForm />}
+        {page ? (
+          <LoginForm />
+        ) : (
+          <SignupForm gotoPrevious={() => setPage(true)} />
+        )}
 
         <div className={lgnstl.changepage}>
           <p>
