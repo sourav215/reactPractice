@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import lgnstl from "./Login.module.css";
 import { CgCloseO } from "react-icons/cg";
 
@@ -11,7 +12,12 @@ function Login() {
     <div className={lgnstl.login_main}>
       <div className={lgnstl.login_container}>
         <div className={lgnstl.icon_div}>
-          <CgCloseO />
+          <CgCloseO
+            onClick={() => {
+              // return <Navigate to={"/"}/>
+              alert("working");
+            }}
+          />
         </div>
         <div className={lgnstl.logo_div}>
           <img
