@@ -9,10 +9,11 @@ import {
   FormControl,
   FormErrorMessage,
   FormHelperText,
+  BeatLoader,
 } from "@chakra-ui/react";
 
 function SignupForm({ gotoPrevious }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
@@ -53,15 +54,17 @@ function SignupForm({ gotoPrevious }) {
   };
   const postData = async () => {
     try {
-      setIsLoading(true);
+      setLoading(true);
       let res = await fetch(`http://localhost:8080/regUser`, {
         method: "POST",
         body: JSON.stringify(inputState),
         headers: { "Content-type": "application/json" },
       });
-      setIsLoading(false);
-      alert("successful");
-      gotoPrevious();
+      setTimeout(() => {
+        setLoading(false);
+        alert("successful");
+        gotoPrevious();
+      }, 5000);
     } catch (error) {
       console.log(error);
     }
@@ -129,6 +132,8 @@ function SignupForm({ gotoPrevious }) {
           </FormErrorMessage>
         </FormControl>
         <Button
+          isLoading={loading}
+          loadingText="Submitting"
           type="submit"
           colorScheme="blue"
           w="full"
