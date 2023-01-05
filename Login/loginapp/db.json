@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "regUser": [
+    {
+      "id":1,
+      "phoneNumber": "6290807540",
+      "name": "Sourabh",
+      "password": "sou@754"
+    }
+  ]
+}
