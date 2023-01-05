@@ -1,12 +1,37 @@
-.container {
+.login_main {
+  background: #aeb6bf;
+  height: 800px;
+}
+.login_container {
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 30px;
+}
+.icon_div {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  font-size: 22px;
 }
-.container > div:first-child {
-  width: 60%;
+.logo_div > img{
+margin: auto;
+width: 150px;
+}
+.title_div {
   border: 1px solid red;
+  font-size: 20px;
+  font-weight: 600;
+  /* letter-spacing: 0.5px; */
+  display: flex;
+  margin: 20px auto;
 }
-.container > div:last-child {
-  width: 40%;
-  border: 1px solid red;
+
+.title_div img {
+  width: 150px;
 }
+.title_div > div:last-child {
+  padding: 10px;
+}
+
