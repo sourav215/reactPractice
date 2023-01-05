@@ -58,6 +58,12 @@
       "name": "eve.holt@reqres.in",
       "password": "sdfsdf",
       "id": 7
+    },
+    {
+      "phoneNumber": "2342352435",
+      "name": "eve.holt@reqres.in",
+      "password": "97323479",
+      "id": 8
     }
   ]
 }
