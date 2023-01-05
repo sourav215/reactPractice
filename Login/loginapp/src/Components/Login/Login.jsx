@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+
 import lgnstl from "./Login.module.css";
 import { CgCloseO } from "react-icons/cg";
 
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
-
 function Login() {
   const [page, setPage] = useState(true);
+
+  const { isAuth } = useSelector((store) => store);
+
+  if (isAuth) {
+    // alert("login successful");
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className={lgnstl.login_main}>
       <div className={lgnstl.login_container}>

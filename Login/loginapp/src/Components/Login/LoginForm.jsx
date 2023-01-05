@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 import { loginAction } from "../Redux/Login/loginAction";
 import {
   Input,
@@ -23,7 +24,7 @@ function LoginForm() {
     name: "",
   });
   const dispatch = useDispatch();
-  const storeData = useSelector((state) => state);
+  const { isAuth } = useSelector((store) => store);
 
   const handleValuedInput = (e) => {
     setInputState({
@@ -80,9 +81,9 @@ function LoginForm() {
     getAllUser();
   }, []);
 
+  
   return (
     <div>
-      {console.log(storeData)}
       <VStack spacing={6} align="flex-start">
         <FormControl isInvalid={inputState.phoneNumber.length > 10}>
           <InputGroup>
