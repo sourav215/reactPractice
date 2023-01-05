@@ -3,6 +3,7 @@ import lgnstl from "./Login.module.css";
 import { CgCloseO } from "react-icons/cg";
 
 import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
 
 function Login() {
   const [page, setPage] = useState(true);
@@ -31,13 +32,14 @@ function Login() {
             </h3>
           </div>
         </div>
-        {page ? <LoginForm /> : <div>signup page</div>}
+
+        {page ? <LoginForm /> : <SignupForm />}
 
         <div className={lgnstl.changepage}>
           <p>
-            First time user?{" "}
+            {page ? "First time user? " : "Already Signed up? "}
             <span className={lgnstl.spn} onClick={() => setPage(!page)}>
-              Sign up
+              {page ? "Sign up" : "Sign in"}
             </span>
           </p>
         </div>

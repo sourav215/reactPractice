@@ -12,22 +12,22 @@ import {
 } from "@chakra-ui/react";
 
 function LoginForm() {
-  const [loginState, setLoginState] = useState({
+  const [inputState, setInputState] = useState({
     phoneNumber: "",
     password: "",
   });
 
-  const handleLoginInput = (e) => {
-    setLoginState({
-      ...loginState,
+  const handleValuedInput = (e) => {
+    setInputState({
+      ...inputState,
       [e.target.name]: e.target.value,
     });
   };
-  const handleLoginSubmit = (e) => {
-    if (loginState.phoneNumber.length != 10) {
+  const handleFormSubmit = (e) => {
+    if (inputState.phoneNumber.length !== 10) {
       alert("Enter correct number");
       return;
-    } else if (loginState.password.length < 4) {
+    } else if (inputState.password.length < 4) {
       alert("Enter correct password");
       return;
     } else {
@@ -38,30 +38,26 @@ function LoginForm() {
   return (
     <div>
       <VStack spacing={6} align="flex-start">
-        <FormControl
-          isInvalid={
-            // loginState.phoneNumber.length == 0 ||
-            loginState.phoneNumber.length > 10
-          }
-        >
+        <FormControl isInvalid={inputState.phoneNumber.length > 10}>
           <InputGroup>
             <InputLeftAddon bg={"#3182ce"} color="white" children="+91 " />
             <Input
               type="number"
               placeholder="Mobile Number"
               name="phoneNumber"
-              onChange={handleLoginInput}
+              onChange={handleValuedInput}
             />
           </InputGroup>
-          {loginState.phoneNumber.length == 0 ? (
+          {inputState.phoneNumber.length == 0 ? (
             <FormHelperText>* Phone No is required</FormHelperText>
           ) : (
             <FormErrorMessage>Invalid Phone Number</FormErrorMessage>
           )}
         </FormControl>
+
         <FormControl
           isInvalid={
-            loginState.password.length > 0 && loginState.password.length < 4
+            inputState.password.length > 0 && inputState.password.length < 4
           }
         >
           <Input
@@ -69,7 +65,7 @@ function LoginForm() {
             placeholder="Enter Password"
             maxlength="10"
             name="password"
-            onChange={handleLoginInput}
+            onChange={handleValuedInput}
           ></Input>
 
           <FormErrorMessage>
@@ -80,9 +76,9 @@ function LoginForm() {
           type="submit"
           colorScheme="blue"
           w="full"
-          onClick={handleLoginSubmit}
+          onClick={handleFormSubmit}
         >
-          Sign in with Password
+          Sign in
         </Button>
       </VStack>
     </div>
