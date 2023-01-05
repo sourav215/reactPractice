@@ -39,12 +39,21 @@ function LoginForm() {
     } else if (inputState.password.length < 4) {
       alert("Enter correct password");
       return;
-    } else {
-      alert("successful");
-      if (isValidUser()) {
-        console.log(logedInUser);
-      }
     }
+    //  else {
+    //   alert("successful");
+    //   if (isValidUser()) {
+    //     console.log(logedInUser);
+    //   }
+    // }
+    setLoading(true);
+    setTimeout(() => {
+      if (isValidUser()) {
+        // setLoading(false);
+        alert("Login Successful!");
+      }
+      setLoading(false);
+    }, 5000);
   };
 
   const isValidUser = () => {
@@ -64,6 +73,7 @@ function LoginForm() {
         loginAction(user, dispatch);
       }
     });
+    setLoading(false);
     return present;
   };
 
@@ -71,7 +81,6 @@ function LoginForm() {
     try {
       let res = await fetch(`http://localhost:8080/regUser`);
       let resData = await res.json();
-      console.log(resData);
       setAllUsers(resData);
     } catch (error) {
       console.log(error);
@@ -81,7 +90,6 @@ function LoginForm() {
     getAllUser();
   }, []);
 
-  
   return (
     <div>
       <VStack spacing={6} align="flex-start">
@@ -120,6 +128,8 @@ function LoginForm() {
           </FormErrorMessage>
         </FormControl>
         <Button
+          isLoading={loading}
+          loadingText="Submitting"
           type="submit"
           colorScheme="blue"
           w="full"
