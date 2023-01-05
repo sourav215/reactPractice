@@ -28,6 +28,17 @@ function Login() {
       [e.target.name]: e.target.value,
     });
   };
+  const handleLoginSubmit = (e) => {
+    if (loginState.phoneNumber.length != 10) {
+      alert("Enter correct number");
+      return;
+    } else if (loginState.password.length < 4) {
+      alert("Enter correct password");
+      return;
+    } else {
+      alert("successful");
+    }
+  };
   return (
     <div className={lgnstl.login_main}>
       <div className={lgnstl.login_container}>
@@ -48,12 +59,13 @@ function Login() {
             />
           </div>
           <div>
-            <h3>To sign in, please enter your mobile number</h3>
+            <h3>To {page ? "sign in":"sign up"}, please enter your mobile number</h3>
           </div>
         </div>
         {/*demo  */}
         {page ? <div>login page</div> : <div>signup page</div>}
         {/* demo */}
+        <div>
         <VStack spacing={6} align="flex-start">
           <FormControl
             isInvalid={
@@ -76,11 +88,6 @@ function Login() {
               <FormErrorMessage>Invalid Phone Number</FormErrorMessage>
             )}
 
-            {/* <FormErrorMessage>
-              {loginState.phoneNumber.length == 0
-                ? "* Phone No is required"
-                : "Invalid Phone Number"}
-            </FormErrorMessage> */}
           </FormControl>
           <FormControl
             isInvalid={
@@ -104,11 +111,12 @@ function Login() {
             type="submit"
             colorScheme="blue"
             w="full"
-            onClick={() => alert("Working")}
+            onClick={handleLoginSubmit}
           >
             Sign in with Password
           </Button>
         </VStack>
+        </div>
         <div className={lgnstl.changepage}>
           <p>
             First time user?{" "}
