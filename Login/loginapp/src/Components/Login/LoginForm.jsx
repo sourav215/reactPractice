@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { loginAction } from "../Redux/Login/loginAction";
 import {
   Input,
   InputGroup,
@@ -21,6 +22,8 @@ function LoginForm() {
     password: "",
     name: "",
   });
+  const dispatch = useDispatch();
+  const storeData = useSelector((state) => state);
 
   const handleValuedInput = (e) => {
     setInputState({
@@ -57,7 +60,7 @@ function LoginForm() {
           phoneNumber: ele.phoneNumber,
         };
         sessionStorage.setItem("loggedInUserInfo", JSON.stringify(user));
-        // loginAction(user, dispatch);
+        loginAction(user, dispatch);
       }
     });
     return present;
@@ -79,7 +82,7 @@ function LoginForm() {
 
   return (
     <div>
-      {console.log(logedInUser)}
+      {console.log(storeData)}
       <VStack spacing={6} align="flex-start">
         <FormControl isInvalid={inputState.phoneNumber.length > 10}>
           <InputGroup>
