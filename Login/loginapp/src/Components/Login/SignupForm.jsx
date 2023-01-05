@@ -9,7 +9,6 @@ import {
   FormControl,
   FormErrorMessage,
   FormHelperText,
-  BeatLoader,
 } from "@chakra-ui/react";
 
 function SignupForm({ gotoPrevious }) {

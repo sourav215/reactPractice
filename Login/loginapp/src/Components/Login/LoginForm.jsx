@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Input,
@@ -9,12 +9,16 @@ import {
   FormControl,
   FormErrorMessage,
   FormHelperText,
+  flatten,
 } from "@chakra-ui/react";
 
 function LoginForm() {
+  const [loading, setLoading] = useState(false);
+  const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
     password: "",
+    name: "",
   });
 
   const handleValuedInput = (e) => {
@@ -32,8 +36,39 @@ function LoginForm() {
       return;
     } else {
       alert("successful");
+      if (isValidUser()) {
+        console.log(inputState);
+      }
     }
   };
+
+  const isValidUser = () => {
+    let present = false;
+    allUsers.forEach((ele) => {
+      if (
+        inputState.phoneNumber === ele.phoneNumber &&
+        inputState.password === ele.password
+      ) {
+        present = true;
+        setInputState({ ...inputState, name: ele.name });
+      }
+    });
+    return present;
+  };
+
+  const getAllUser = async () => {
+    try {
+      let res = await fetch(`http://localhost:8080/regUser`);
+      let resData = await res.json();
+      console.log(resData);
+      setAllUsers(resData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getAllUser();
+  }, []);
 
   return (
     <div>
