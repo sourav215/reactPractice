@@ -1,11 +1,14 @@
 .login_main {
   background: #aeb6bf;
   height: 800px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid grey;
 }
 .login_container {
   width: 400px;
-  height: 400px;
-  margin: 50px auto;
+  /* height: 400px; */
+  margin: 50px auto 50px auto;
   border-radius: 10px;
   background-color: #fff;
   padding: 30px;
@@ -15,17 +18,17 @@
   flex-direction: row-reverse;
   font-size: 22px;
 }
-.logo_div > img{
-margin: auto;
-width: 150px;
+.logo_div > img {
+  margin: auto;
+  width: 150px;
 }
 .title_div {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   font-size: 20px;
   font-weight: 600;
   /* letter-spacing: 0.5px; */
   display: flex;
-  margin: 20px auto;
+  margin: 30px auto 50px auto;
 }
 
 .title_div img {
@@ -35,3 +38,10 @@ width: 150px;
   padding: 10px;
 }
 
+.changepage {
+  text-align: center;
+  margin: 20px auto 10px auto;
+}
+.spn {
+  color: blue;
+}
