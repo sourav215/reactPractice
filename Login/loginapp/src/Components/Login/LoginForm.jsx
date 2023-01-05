@@ -15,6 +15,7 @@ import {
 function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
+  const [logedInUser, setLoggedInUser] = useState({});
   const [inputState, setInputState] = useState({
     phoneNumber: "",
     password: "",
@@ -37,7 +38,7 @@ function LoginForm() {
     } else {
       alert("successful");
       if (isValidUser()) {
-        console.log(inputState);
+        console.log(logedInUser);
       }
     }
   };
@@ -50,7 +51,7 @@ function LoginForm() {
         inputState.password === ele.password
       ) {
         present = true;
-        setInputState({ ...inputState, name: ele.name });
+        sessionStorage.setItem("loggedInUserInfo", JSON.stringify(ele));
       }
     });
     return present;
@@ -72,6 +73,7 @@ function LoginForm() {
 
   return (
     <div>
+      {console.log(logedInUser)}
       <VStack spacing={6} align="flex-start">
         <FormControl isInvalid={inputState.phoneNumber.length > 10}>
           <InputGroup>
