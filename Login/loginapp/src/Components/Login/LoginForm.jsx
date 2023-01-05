@@ -51,7 +51,13 @@ function LoginForm() {
         inputState.password === ele.password
       ) {
         present = true;
-        sessionStorage.setItem("loggedInUserInfo", JSON.stringify(ele));
+        const user = {
+          isAuth: true,
+          name: ele.name,
+          phoneNumber: ele.phoneNumber,
+        };
+        sessionStorage.setItem("loggedInUserInfo", JSON.stringify(user));
+        // loginAction(user, dispatch);
       }
     });
     return present;
