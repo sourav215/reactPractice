@@ -10,14 +10,24 @@ import {
   VStack,
   FormControl,
   FormErrorMessage,
+  FormHelperText,
 } from "@chakra-ui/react";
 
 function Login() {
   const [page, setPage] = useState(true);
-  
-  const hasNum = new RegExp("(?=.*[0-9])");
+  const [loginState, setLoginState] = useState({
+    phoneNumber: "",
+    password: "",
+  });
+
   const phoneerr = true;
   const passworderr = true;
+  const handleLoginInput = (e) => {
+    setLoginState({
+      ...loginState,
+      [e.target.name]: e.target.value,
+    });
+  };
   return (
     <div className={lgnstl.login_main}>
       <div className={lgnstl.login_container}>
@@ -45,20 +55,48 @@ function Login() {
         {page ? <div>login page</div> : <div>signup page</div>}
         {/* demo */}
         <VStack spacing={6} align="flex-start">
-          <FormControl isInvalid={phoneerr}>
+          <FormControl
+            isInvalid={
+              // loginState.phoneNumber.length == 0 ||
+              loginState.phoneNumber.length > 10
+            }
+          >
             <InputGroup>
               <InputLeftAddon bg={"#3182ce"} color="white" children="+91 " />
-              <Input type="tel" placeholder="Mobile Number" />
+              <Input
+                type="number"
+                placeholder="Mobile Number"
+                name="phoneNumber"
+                onChange={handleLoginInput}
+              />
             </InputGroup>
-            {phoneerr && (
-              <FormErrorMessage>* Phone No is required.</FormErrorMessage>
+            {loginState.phoneNumber.length == 0 ? (
+              <FormHelperText>* Phone No is required</FormHelperText>
+            ) : (
+              <FormErrorMessage>Invalid Phone Number</FormErrorMessage>
             )}
+
+            {/* <FormErrorMessage>
+              {loginState.phoneNumber.length == 0
+                ? "* Phone No is required"
+                : "Invalid Phone Number"}
+            </FormErrorMessage> */}
           </FormControl>
-          <FormControl isInvalid={passworderr}>
-            <Input type={"password"} placeholder="Enter Password"></Input>
+          <FormControl
+            isInvalid={
+              loginState.password.length > 0 && loginState.password.length < 4
+            }
+          >
+            <Input
+              type={"password"}
+              placeholder="Enter Password"
+              maxlength="10"
+              name="password"
+              onChange={handleLoginInput}
+            ></Input>
             {passworderr && (
               <FormErrorMessage>
-                {"Password should be over 6 characters."}
+                {"Password should be over 4 characters."}
               </FormErrorMessage>
             )}
           </FormControl>
