@@ -5,8 +5,9 @@ import {
   
   import loginReducer from "./Login/loginReducer";
   import { logger } from "redux-logger";
+  import thunk from "redux-thunk";
   
    
-  const reduxStore = createStore(loginReducer, applyMiddleware(logger));
+  const reduxStore = createStore(loginReducer, applyMiddleware(logger, thunk));
   
   export default reduxStore;

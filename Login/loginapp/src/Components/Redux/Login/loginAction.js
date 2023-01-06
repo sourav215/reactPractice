@@ -6,3 +6,7 @@ export const loginAction = (userData, dispatch) => {
     payload: userData
   });
 };
+
+export const loginThunkAction = (dispatch, getState) => {
+  
+}
