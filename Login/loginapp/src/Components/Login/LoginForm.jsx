@@ -22,10 +22,7 @@ import {
 function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
-  const [subError, setSubError] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(false);
-  const [phNoIsInvalid, setPhNoIsInvalid] = useState(false);
-  const [passwordIsInvalid, setPasswordIsInvalid] = useState(false);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
     password: "",
@@ -49,10 +46,6 @@ function LoginForm() {
         status: "error",
         isClosable: true,
       });
-      // setPhNoIsInvalid(true);
-      // setTimeout(() => {
-      //   setPhNoIsInvalid(false);
-      // }, 5000);
       return;
     } else if (inputState.password.length < 4) {
       toast({
@@ -60,10 +53,6 @@ function LoginForm() {
         status: "error",
         isClosable: true,
       });
-      // setPasswordIsInvalid(true);
-      // setTimeout(() => {
-      //   setPasswordIsInvalid(false);
-      // }, 5000);
       return;
     }
 
@@ -78,10 +67,6 @@ function LoginForm() {
           status: "error",
           isClosable: true,
         });
-        // setSubError(true);
-        // setTimeout(() => {
-        //   setSubError(false);
-        // }, 5000);
       }
     }, 5000);
   };
@@ -196,28 +181,6 @@ function LoginForm() {
         >
           Sign in
         </Button>
-        {/*  */}
-        <Stack spacing={3}>
-          {phNoIsInvalid && (
-            <Alert status="error" w="full">
-              <AlertIcon />
-              Invalid Phone Number. Enter Correct One
-            </Alert>
-          )}
-          {passwordIsInvalid && (
-            <Alert status="error">
-              <AlertIcon />
-              {"  "} Password should be over 4 characters.{"  "}
-            </Alert>
-          )}
-          {subError && (
-            <Alert status="error">
-              <AlertIcon />
-              Error! Login failed. Please recheck the phone number and password
-              and try again.
-            </Alert>
-          )}
-        </Stack>
       </VStack>
     </div>
   );
