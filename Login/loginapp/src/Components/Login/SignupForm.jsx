@@ -50,12 +50,12 @@ function SignupForm({ gotoPrevious }) {
       }, 5000);
       return;
     } else if (hasAlreadyRegistered()) {
-      alert("User has already registered");
+      // alert("User has already registered");
       setRegistered(true);
       setTimeout(() => {
         setRegistered(false);
+        gotoPrevious();
       }, 5000);
-      gotoPrevious();
     } else {
       postData();
       //   alert("successful");
@@ -81,9 +81,9 @@ function SignupForm({ gotoPrevious }) {
       });
       setTimeout(() => {
         setLoading(false);
-        submissionStatus(true);
+        setSubmissionStatus(true);
         setTimeout(() => {
-          submissionStatus(false);
+          setSubmissionStatus(false);
           gotoPrevious();
         }, 5000);
       }, 5000);
@@ -124,7 +124,7 @@ function SignupForm({ gotoPrevious }) {
         >
           <AlertIcon boxSize="40px" mr={0} />
           <AlertTitle mt={4} mb={1} fontSize="1g">
-            Login Success!
+           Success!
           </AlertTitle>
           <AlertDescription maxWidth="sm">
             You have been successfully logged into Policybazaar!
@@ -210,6 +210,11 @@ function SignupForm({ gotoPrevious }) {
             <Alert status="error">
               <AlertIcon />
               There was an error processing your request
+            </Alert>
+          )}
+          {registered && (
+            <Alert status="success">
+              This Phone Number already exist in our database.
             </Alert>
           )}
         </Stack>
