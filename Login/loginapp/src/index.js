@@ -11,13 +11,13 @@ import reduxStore from "./Components/Redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-    <ChakraProvider>
+    // <ChakraProvider>
       <BrowserRouter>
         <Provider store={reduxStore}>
           <App />
         </Provider>
       </BrowserRouter>
-    </ChakraProvider>
+    // </ChakraProvider>
   // </React.StrictMode>
 );
 
