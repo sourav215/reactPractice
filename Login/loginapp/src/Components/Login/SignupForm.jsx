@@ -14,22 +14,19 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  useToast,
 } from "@chakra-ui/react";
 
 function SignupForm({ gotoPrevious }) {
-  const [loading, setLoading] = useState(false);
-  const [registered, setRegistered] = useState(false);
-  const [subError, setSubError] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(false);
-  const [phNoIsInvalid, setPhNoIsInvalid] = useState(false);
-  const [passwordIsInvalid, setPasswordIsInvalid] = useState(false);
+  const [loading, setLoading] = useState(false);  
+  const [submissionStatus, setSubmissionStatus] = useState(false);  
   const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
     name: "",
     password: "",
   });
-
+  const toast = useToast({ position: "top" });
   const handleValuedInput = (e) => {
     setInputState({
       ...inputState,
@@ -38,28 +35,37 @@ function SignupForm({ gotoPrevious }) {
   };
   const handleFormSubmit = (e) => {
     if (inputState.phoneNumber.length !== 10) {
-      setPhNoIsInvalid(true);
-      setTimeout(() => {
-        setPhNoIsInvalid(false);
-      }, 5000);
+      toast({
+        title: `Invalid Phone Number. Enter Correct One`,
+        status: "error",
+        isClosable: true,
+      });
       return;
-    } else if (inputState.password.length < 4) {
-      setPasswordIsInvalid(true);
-      setTimeout(() => {
-        setPasswordIsInvalid(false);
-      }, 5000);
+    }else if(inputState.name.length < 1) {
+      toast({
+        title: `Name is required`,
+        status: "warning",
+        isClosable: true,
+      });
+      return;
+    }
+     else if (inputState.password.length < 4) {
+      toast({
+        title: `Password should be over 4 characters.`,
+        status: "error",
+        isClosable: true,
+      });
       return;
     } else if (hasAlreadyRegistered()) {
-      // alert("User has already registered");
-      setRegistered(true);
-      setTimeout(() => {
-        setRegistered(false);
-        gotoPrevious();
-      }, 5000);
+      toast({
+        title: `This Phone Number already exist in our database.`,
+        status: "success",
+        isClosable: true,
+      });
+      gotoPrevious();
+      return;      
     } else {
       postData();
-      //   alert("successful");
-      //   gotoPrevious();
     }
   };
   const hasAlreadyRegistered = () => {
@@ -86,9 +92,14 @@ function SignupForm({ gotoPrevious }) {
           setSubmissionStatus(false);
           gotoPrevious();
         }, 5000);
-      }, 5000);
+      }, 2000);
     } catch (error) {
       console.log(error);
+      toast({
+        title: `There was an error processing your request`,
+        status: "error",
+        isClosable: true,
+      });
     }
   };
   const getAllUser = async () => {
@@ -98,11 +109,12 @@ function SignupForm({ gotoPrevious }) {
       console.log(resData);
       setAllUsers(resData);
     } catch (error) {
-      setSubError(true);
-      setTimeout(() => {
-        setSubError(false);
-      }, 5000);
       console.log(error);
+      toast({
+        title: `There was an error processing your request`,
+        status: "error",
+        isClosable: true,
+      });
     }
   };
 
@@ -192,7 +204,7 @@ function SignupForm({ gotoPrevious }) {
         >
           Sign up
         </Button>
-        {/*  */}
+{/*         
         <Stack spacing={3}>
           {phNoIsInvalid && (
             <Alert status="error" w="full">
@@ -217,7 +229,7 @@ function SignupForm({ gotoPrevious }) {
               This Phone Number already exist in our database.
             </Alert>
           )}
-        </Stack>
+        </Stack> */}
       </VStack>
     </div>
   );

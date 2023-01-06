@@ -68,7 +68,7 @@ function LoginForm() {
           isClosable: true,
         });
       }
-    }, 5000);
+    }, 2000);
   };
 
   const isValidUser = () => {
@@ -104,6 +104,11 @@ function LoginForm() {
       setAllUsers(resData);
     } catch (error) {
       console.log(error);
+      toast({
+        title: `There was an error processing your request`,
+        status: "error",
+        isClosable: true,
+      });
     }
   };
   useEffect(() => {
