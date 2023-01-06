@@ -11,7 +11,6 @@ import {
   FormControl,
   FormErrorMessage,
   FormHelperText,
-  flatten,
   Stack,
   Alert,
   AlertIcon,
@@ -20,7 +19,9 @@ import {
 function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
-  const [logedInUser, setLoggedInUser] = useState({});
+  const [submissionStatus, setSubmissionStatus] = useState(false);
+  const [phNoIsInvalid, setPhNoIsInvalid] = useState(false);
+  const [passwordIsInvalid, setPasswordIsInvalid] = useState(false);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
     password: "",
@@ -37,10 +38,17 @@ function LoginForm() {
   };
   const handleFormSubmit = (e) => {
     if (inputState.phoneNumber.length !== 10) {
-      alert("Enter correct number");
+      setPhNoIsInvalid(true);
+      setTimeout(() => {
+        setPhNoIsInvalid(false);
+      }, 5000);
+      // alert("Enter correct number");
       return;
     } else if (inputState.password.length < 4) {
-      alert("Enter correct password");
+      setPasswordIsInvalid(true);
+      setTimeout(() => {
+        setPasswordIsInvalid(false);
+      }, 5000);
       return;
     }
     //  else {
@@ -93,6 +101,13 @@ function LoginForm() {
     getAllUser();
   }, []);
 
+  if(submissionStatus) {
+    return (
+      <>
+      </>
+    )
+  }
+
   return (
     <div>
       <VStack spacing={6} align="flex-start">
@@ -140,6 +155,21 @@ function LoginForm() {
         >
           Sign in
         </Button>
+        {/*  */}
+        <Stack spacing={3}>
+          {phNoIsInvalid && (
+            <Alert status="error" w="full">
+              <AlertIcon />
+              Invalid Phone Number. Enter Correct One
+            </Alert>
+          )}
+          {passwordIsInvalid && (
+            <Alert status="error">
+              <AlertIcon />
+            {"  "}  Password should be over 4 characters.{"  "}
+            </Alert>
+          )}
+        </Stack>
       </VStack>
     </div>
   );

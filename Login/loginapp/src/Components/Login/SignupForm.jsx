@@ -95,7 +95,7 @@ function SignupForm({ gotoPrevious }) {
               onChange={handleValuedInput}
             />
           </InputGroup>
-          {inputState.phoneNumber.length == 0 ? (
+          {inputState.phoneNumber.length === 0 ? (
             <FormHelperText>* Phone No is required</FormHelperText>
           ) : (
             <FormErrorMessage>Invalid Phone Number</FormErrorMessage>
