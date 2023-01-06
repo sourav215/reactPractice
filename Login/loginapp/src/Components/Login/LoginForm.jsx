@@ -41,7 +41,6 @@ function LoginForm() {
   };
   const handleFormSubmit = (e) => {
     if (inputState.phoneNumber.length !== 10) {
-      // alert("Enter correct number");
       setPhNoIsInvalid(true);
       setTimeout(() => {
         setPhNoIsInvalid(false);
@@ -54,17 +53,11 @@ function LoginForm() {
       }, 5000);
       return;
     }
-    //  else {
-    //   alert("successful");
-    //   if (isValidUser()) {
-    //     console.log(logedInUser);
-    //   }
-    // }
+  
     setLoading(true);
     setTimeout(() => {
       if (isValidUser()) {
         setLoading(false);
-        // alert("Login Successful!");
       } else {
         setLoading(false);
         setSubError(true);
