@@ -18,8 +18,8 @@ import {
 } from "@chakra-ui/react";
 
 function SignupForm({ gotoPrevious }) {
-  const [loading, setLoading] = useState(false);  
-  const [submissionStatus, setSubmissionStatus] = useState(false);  
+  const [loading, setLoading] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
@@ -41,15 +41,14 @@ function SignupForm({ gotoPrevious }) {
         isClosable: true,
       });
       return;
-    }else if(inputState.name.length < 1) {
+    } else if (inputState.name.length === 0) {
       toast({
         title: `Name is required`,
         status: "warning",
         isClosable: true,
       });
       return;
-    }
-     else if (inputState.password.length < 4) {
+    } else if (inputState.password.length < 4) {
       toast({
         title: `Password should be over 4 characters.`,
         status: "error",
@@ -63,7 +62,7 @@ function SignupForm({ gotoPrevious }) {
         isClosable: true,
       });
       gotoPrevious();
-      return;      
+      return;
     } else {
       postData();
     }
@@ -91,7 +90,7 @@ function SignupForm({ gotoPrevious }) {
         setTimeout(() => {
           setSubmissionStatus(false);
           gotoPrevious();
-        }, 5000);
+        }, 2000);
       }, 2000);
     } catch (error) {
       console.log(error);
@@ -106,7 +105,6 @@ function SignupForm({ gotoPrevious }) {
     try {
       let res = await fetch(`http://localhost:8080/regUser`);
       let resData = await res.json();
-      console.log(resData);
       setAllUsers(resData);
     } catch (error) {
       console.log(error);
@@ -170,7 +168,7 @@ function SignupForm({ gotoPrevious }) {
             type={"text"}
             placeholder="Enter Your Name"
             name="name"
-            onClick={handleValuedInput}
+            onChange={handleValuedInput}
           />
           {/* {inputState.name.length < 1 && (
                 <FormHelperText>* Name is required</FormHelperText>
@@ -204,7 +202,7 @@ function SignupForm({ gotoPrevious }) {
         >
           Sign up
         </Button>
-{/*         
+        {/*         
         <Stack spacing={3}>
           {phNoIsInvalid && (
             <Alert status="error" w="full">

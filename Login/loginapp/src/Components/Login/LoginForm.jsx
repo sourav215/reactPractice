@@ -90,7 +90,7 @@ function LoginForm() {
         setTimeout(() => {
           setSubmissionStatus(false);
           loginAction(user, dispatch);
-        }, 5000);
+        }, 3000);
       }
     });
     setLoading(false);
