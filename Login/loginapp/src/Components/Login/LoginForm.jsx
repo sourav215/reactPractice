@@ -16,6 +16,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  useToast,
 } from "@chakra-ui/react";
 
 function LoginForm() {
@@ -30,8 +31,10 @@ function LoginForm() {
     password: "",
     name: "",
   });
+
   const dispatch = useDispatch();
   const { isAuth } = useSelector((store) => store);
+  const toast = useToast({ position: "top" });
 
   const handleValuedInput = (e) => {
     setInputState({
@@ -41,29 +44,44 @@ function LoginForm() {
   };
   const handleFormSubmit = (e) => {
     if (inputState.phoneNumber.length !== 10) {
-      setPhNoIsInvalid(true);
-      setTimeout(() => {
-        setPhNoIsInvalid(false);
-      }, 5000);
+      toast({
+        title: `Invalid Phone Number. Enter Correct One`,
+        status: "error",
+        isClosable: true,
+      });
+      // setPhNoIsInvalid(true);
+      // setTimeout(() => {
+      //   setPhNoIsInvalid(false);
+      // }, 5000);
       return;
     } else if (inputState.password.length < 4) {
-      setPasswordIsInvalid(true);
-      setTimeout(() => {
-        setPasswordIsInvalid(false);
-      }, 5000);
+      toast({
+        title: `Password should be over 4 characters.`,
+        status: "error",
+        isClosable: true,
+      });
+      // setPasswordIsInvalid(true);
+      // setTimeout(() => {
+      //   setPasswordIsInvalid(false);
+      // }, 5000);
       return;
     }
-  
+
     setLoading(true);
     setTimeout(() => {
       if (isValidUser()) {
         setLoading(false);
       } else {
         setLoading(false);
-        setSubError(true);
-        setTimeout(() => {
-          setSubError(false);
-        }, 5000);
+        toast({
+          title: `Error! Login failed. Please recheck the phone number and password and try again.`,
+          status: "error",
+          isClosable: true,
+        });
+        // setSubError(true);
+        // setTimeout(() => {
+        //   setSubError(false);
+        // }, 5000);
       }
     }, 5000);
   };
@@ -195,7 +213,8 @@ function LoginForm() {
           {subError && (
             <Alert status="error">
               <AlertIcon />
-             Error! Login failed. Please recheck the phone number and password and try again.
+              Error! Login failed. Please recheck the phone number and password
+              and try again.
             </Alert>
           )}
         </Stack>
