@@ -170,9 +170,6 @@ function SignupForm({ gotoPrevious }) {
             name="name"
             onChange={handleValuedInput}
           />
-          {/* {inputState.name.length < 1 && (
-                <FormHelperText>* Name is required</FormHelperText>
-              )} */}
         </FormControl>
 
         <FormControl
@@ -202,32 +199,6 @@ function SignupForm({ gotoPrevious }) {
         >
           Sign up
         </Button>
-        {/*         
-        <Stack spacing={3}>
-          {phNoIsInvalid && (
-            <Alert status="error" w="full">
-              <AlertIcon />
-              Invalid Phone Number. Enter Correct One
-            </Alert>
-          )}
-          {passwordIsInvalid && (
-            <Alert status="error">
-              <AlertIcon />
-              {"  "} Password should be over 4 characters.{"  "}
-            </Alert>
-          )}
-          {subError && (
-            <Alert status="error">
-              <AlertIcon />
-              There was an error processing your request
-            </Alert>
-          )}
-          {registered && (
-            <Alert status="success">
-              This Phone Number already exist in our database.
-            </Alert>
-          )}
-        </Stack> */}
       </VStack>
     </div>
   );
