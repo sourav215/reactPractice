@@ -4,14 +4,18 @@ import Login from "../Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import PrivateRoute from "../Login/PrivateRoute";
-import { loginThunkAction } from "../Redux/Login/loginAction";
+import { loginAction, loginThunkAction } from "../Redux/Login/loginAction";
 import Home from "./Home";
 import Policy from "./Policy";
 function AllRoutes() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
-    dispatch(loginThunkAction);
+    // dispatch(loginThunkAction);
+    const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
+    if (userData) {
+      loginAction(userData, dispatch);
+    }
   }, []);
   return (
     <div>
@@ -29,7 +33,7 @@ function AllRoutes() {
           path="/policy"
           element={
             <PrivateRoute>
-              <Policy />
+            <Policy />
             </PrivateRoute>
           }
         />
