@@ -9,10 +9,16 @@ import {
   FormControl,
   FormErrorMessage,
   FormHelperText,
+  Stack,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
 
 function SignupForm({ gotoPrevious }) {
   const [loading, setLoading] = useState(false);
+  const [registered, setRegistered] = useState(false);
   const [subError, setSubError] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const [phNoIsInvalid, setPhNoIsInvalid] = useState(false);
@@ -32,13 +38,23 @@ function SignupForm({ gotoPrevious }) {
   };
   const handleFormSubmit = (e) => {
     if (inputState.phoneNumber.length !== 10) {
-      alert("Enter correct number");
+      setPhNoIsInvalid(true);
+      setTimeout(() => {
+        setPhNoIsInvalid(false);
+      }, 5000);
       return;
     } else if (inputState.password.length < 4) {
-      alert("Enter correct password");
+      setPasswordIsInvalid(true);
+      setTimeout(() => {
+        setPasswordIsInvalid(false);
+      }, 5000);
       return;
     } else if (hasAlreadyRegistered()) {
       alert("User has already registered");
+      setRegistered(true);
+      setTimeout(() => {
+        setRegistered(false);
+      }, 5000);
       gotoPrevious();
     } else {
       postData();
@@ -65,8 +81,11 @@ function SignupForm({ gotoPrevious }) {
       });
       setTimeout(() => {
         setLoading(false);
-        alert("successful");
-        gotoPrevious();
+        submissionStatus(true);
+        setTimeout(() => {
+          submissionStatus(false);
+          gotoPrevious();
+        }, 5000);
       }, 5000);
     } catch (error) {
       console.log(error);
@@ -79,6 +98,10 @@ function SignupForm({ gotoPrevious }) {
       console.log(resData);
       setAllUsers(resData);
     } catch (error) {
+      setSubError(true);
+      setTimeout(() => {
+        setSubError(false);
+      }, 5000);
       console.log(error);
     }
   };
@@ -86,6 +109,31 @@ function SignupForm({ gotoPrevious }) {
   useEffect(() => {
     getAllUser();
   }, []);
+
+  if (submissionStatus) {
+    return (
+      <>
+        <Alert
+          status="success"
+          variant="subtle"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+          height="200px"
+        >
+          <AlertIcon boxSize="40px" mr={0} />
+          <AlertTitle mt={4} mb={1} fontSize="1g">
+            Login Success!
+          </AlertTitle>
+          <AlertDescription maxWidth="sm">
+            You have been successfully logged into Policybazaar!
+          </AlertDescription>
+        </Alert>
+      </>
+    );
+  }
+
   return (
     <div>
       <VStack spacing={6} align="flex-start">
@@ -144,6 +192,27 @@ function SignupForm({ gotoPrevious }) {
         >
           Sign up
         </Button>
+        {/*  */}
+        <Stack spacing={3}>
+          {phNoIsInvalid && (
+            <Alert status="error" w="full">
+              <AlertIcon />
+              Invalid Phone Number. Enter Correct One
+            </Alert>
+          )}
+          {passwordIsInvalid && (
+            <Alert status="error">
+              <AlertIcon />
+              {"  "} Password should be over 4 characters.{"  "}
+            </Alert>
+          )}
+          {subError && (
+            <Alert status="error">
+              <AlertIcon />
+              There was an error processing your request
+            </Alert>
+          )}
+        </Stack>
       </VStack>
     </div>
   );
