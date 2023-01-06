@@ -13,6 +13,10 @@ import {
 
 function SignupForm({ gotoPrevious }) {
   const [loading, setLoading] = useState(false);
+  const [subError, setSubError] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState(false);
+  const [phNoIsInvalid, setPhNoIsInvalid] = useState(false);
+  const [passwordIsInvalid, setPasswordIsInvalid] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
     phoneNumber: "",
