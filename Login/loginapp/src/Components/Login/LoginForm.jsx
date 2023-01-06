@@ -21,6 +21,7 @@ import {
 function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
+  const [subError, setSubError] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const [phNoIsInvalid, setPhNoIsInvalid] = useState(false);
   const [passwordIsInvalid, setPasswordIsInvalid] = useState(false);
@@ -40,11 +41,11 @@ function LoginForm() {
   };
   const handleFormSubmit = (e) => {
     if (inputState.phoneNumber.length !== 10) {
-      setSubmissionStatus(true);
-      setTimeout(() => {
-        setSubmissionStatus(false);
-      }, 5000);
       // alert("Enter correct number");
+      setPhNoIsInvalid(true);
+      setTimeout(() => {
+        setPhNoIsInvalid(false);
+      }, 5000);
       return;
     } else if (inputState.password.length < 4) {
       setPasswordIsInvalid(true);
@@ -64,12 +65,13 @@ function LoginForm() {
       if (isValidUser()) {
         setLoading(false);
         // alert("Login Successful!");
-        setPhNoIsInvalid(true);
+      } else {
+        setLoading(false);
+        setSubError(true);
         setTimeout(() => {
-          setPhNoIsInvalid(false);
+          setSubError(false);
         }, 5000);
       }
-      setLoading(false);
     }, 5000);
   };
 
@@ -87,7 +89,12 @@ function LoginForm() {
           phoneNumber: ele.phoneNumber,
         };
         sessionStorage.setItem("loggedInUserInfo", JSON.stringify(user));
-        loginAction(user, dispatch);
+        setLoading(false);
+        setSubmissionStatus(true);
+        setTimeout(() => {
+          setSubmissionStatus(false);
+          loginAction(user, dispatch);
+        }, 5000);
       }
     });
     setLoading(false);
@@ -190,6 +197,12 @@ function LoginForm() {
             <Alert status="error">
               <AlertIcon />
               {"  "} Password should be over 4 characters.{"  "}
+            </Alert>
+          )}
+          {subError && (
+            <Alert status="error">
+              <AlertIcon />
+             Error! Login failed. Please recheck the phone number and password and try again.
             </Alert>
           )}
         </Stack>
