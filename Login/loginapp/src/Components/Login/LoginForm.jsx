@@ -14,6 +14,8 @@ import {
   Stack,
   Alert,
   AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
 
 function LoginForm() {
@@ -38,9 +40,9 @@ function LoginForm() {
   };
   const handleFormSubmit = (e) => {
     if (inputState.phoneNumber.length !== 10) {
-      setPhNoIsInvalid(true);
+      setSubmissionStatus(true);
       setTimeout(() => {
-        setPhNoIsInvalid(false);
+        setSubmissionStatus(false);
       }, 5000);
       // alert("Enter correct number");
       return;
@@ -60,8 +62,12 @@ function LoginForm() {
     setLoading(true);
     setTimeout(() => {
       if (isValidUser()) {
-        // setLoading(false);
-        alert("Login Successful!");
+        setLoading(false);
+        // alert("Login Successful!");
+        setPhNoIsInvalid(true);
+        setTimeout(() => {
+          setPhNoIsInvalid(false);
+        }, 5000);
       }
       setLoading(false);
     }, 5000);
@@ -101,11 +107,28 @@ function LoginForm() {
     getAllUser();
   }, []);
 
-  if(submissionStatus) {
+  if (submissionStatus) {
     return (
       <>
+        <Alert
+          status="success"
+          variant="subtle"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+          height="200px"
+        >
+          <AlertIcon boxSize="40px" mr={0} />
+          <AlertTitle mt={4} mb={1} fontSize="1g">
+            Login Success!
+          </AlertTitle>
+          <AlertDescription maxWidth="sm">
+            You have been successfully logged into Policybazaar!
+          </AlertDescription>
+        </Alert>
       </>
-    )
+    );
   }
 
   return (
@@ -166,7 +189,7 @@ function LoginForm() {
           {passwordIsInvalid && (
             <Alert status="error">
               <AlertIcon />
-            {"  "}  Password should be over 4 characters.{"  "}
+              {"  "} Password should be over 4 characters.{"  "}
             </Alert>
           )}
         </Stack>
