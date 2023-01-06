@@ -124,10 +124,10 @@ function SignupForm({ gotoPrevious }) {
         >
           <AlertIcon boxSize="40px" mr={0} />
           <AlertTitle mt={4} mb={1} fontSize="1g">
-           Success!
+            Success!
           </AlertTitle>
           <AlertDescription maxWidth="sm">
-            You have been successfully logged into Policybazaar!
+            Congratulation, Your Account has been successfully created.
           </AlertDescription>
         </Alert>
       </>
