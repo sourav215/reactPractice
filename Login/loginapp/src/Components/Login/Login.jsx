@@ -9,21 +9,22 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 function Login() {
   const [page, setPage] = useState(true);
-
+  const [navigateToHome, setNavigateToHome] = useState(false);
   const { isAuth } = useSelector((store) => store);
-
-  if (isAuth) {
-    // alert("login successful");
+  const goBackToHome = () => {
+    setNavigateToHome(true);
+  };
+  if (isAuth || navigateToHome) {
     return <Navigate to={"/"} />;
   }
+
   return (
     <div className={lgnstl.login_main}>
       <div className={lgnstl.login_container}>
         <div className={lgnstl.icon_div}>
           <CgCloseO
             onClick={() => {
-              // return <Navigate to={"/"}/>
-              alert("working");
+              goBackToHome();
             }}
           />
         </div>
