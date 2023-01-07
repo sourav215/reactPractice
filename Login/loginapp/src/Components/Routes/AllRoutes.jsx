@@ -8,16 +8,16 @@ import { loginAction, loginThunkAction } from "../Redux/Login/loginAction";
 import Home from "./Home";
 import Policy from "./Policy";
 function AllRoutes() {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
-    console.log(userData);
-    if (userData) {
-      // dispatch(loginThunkAction);
-      loginAction(userData, dispatch);
-    }
-  }, []);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
+  //   console.log(userData);
+  //   if (userData) {
+  //     // dispatch(loginThunkAction);
+  //     loginAction(userData, dispatch);
+  //   }
+  // }, []);
 
   return (
     <div>

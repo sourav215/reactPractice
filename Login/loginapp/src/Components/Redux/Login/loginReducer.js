@@ -1,4 +1,5 @@
 export const LOGIN = "LOGIN";
+
 const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
 
 const initState = {
