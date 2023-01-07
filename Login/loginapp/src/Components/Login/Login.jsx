@@ -12,7 +12,7 @@ import { CgCloseO } from "react-icons/cg";
 function Login() {
 
   const [page, setPage] = useState(true);
-  const { isAuth } = useSelector((store) => store);
+  const { isAuth } = useSelector((store) => store.login);
   const navigate = useNavigate();
 
 
