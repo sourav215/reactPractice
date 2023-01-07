@@ -1,4 +1,4 @@
-import { LOGIN } from "./loginReducer";
+import { LOGIN, LOGOUT } from "./loginReducer";
 
 export const loginAction = (userData, dispatch) => {
   dispatch({
@@ -7,12 +7,10 @@ export const loginAction = (userData, dispatch) => {
   });
 };
 
-// export const loginThunkAction = (dispatch, getState) => {
-//   const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
-//   if(! getState().isAuth && userData ) {
-//     dispatch({
-//       type: LOGIN,
-//       payload: userData
-//     });
-//   }
-// }
+export const logoutAction = (dispatch) => {
+  sessionStorage.removeItem("loggedInUserInfo");
+  dispatch({
+    type: LOGIN,
+    payload: "",
+  });
+}

@@ -1,9 +1,10 @@
 export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
 
 const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
 
-const initState = {
-  isAuth: (userData)? true: false,
+const initState =(userData) ? userData : {
+  isAuth: false,
   name: "",
   phoneNumber: "",
 };
@@ -16,6 +17,14 @@ const loginReducer = (state = initState, { type, payload }) => {
         name: payload.name,
         phoneNumber: payload.phoneNumber,
         isAuth: payload.isAuth,
+      };
+    }
+    case LOGOUT: {
+      return {
+        ...state,
+        name: "",
+        phoneNumber: "",
+        isAuth: false,
       };
     }
     default:
