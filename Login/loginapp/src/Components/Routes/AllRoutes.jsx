@@ -11,12 +11,14 @@ function AllRoutes() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(loginThunkAction);
     const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
+    console.log(userData);
     if (userData) {
+      // dispatch(loginThunkAction);
       loginAction(userData, dispatch);
     }
   }, []);
+
   return (
     <div>
       <Routes>
@@ -33,7 +35,7 @@ function AllRoutes() {
           path="/policy"
           element={
             <PrivateRoute>
-            <Policy />
+              <Policy />
             </PrivateRoute>
           }
         />

@@ -25,105 +25,15 @@
     },
     {
       "phoneNumber": "9735939329",
-      "name": "eve.holt@reqres.in",
+      "name": "eve",
       "password": "khdfsd",
       "id": 2
     },
     {
-      "phoneNumber": "9743797484",
-      "name": "eve.holt@reqres.in",
-      "password": "sdfsdf",
+      "phoneNumber": "8934653459",
+      "name": "Papai",
+      "password": "sdjflsd",
       "id": 3
-    },
-    {
-      "phoneNumber": "9739273492",
-      "name": "eve.holt@reqres.in",
-      "password": "sdfkhd",
-      "id": 4
-    },
-    {
-      "phoneNumber": "3452434534",
-      "name": "",
-      "password": "sdftui",
-      "id": 5
-    },
-    {
-      "phoneNumber": "4564565464",
-      "name": "eve.holt@reqres.in",
-      "password": "sdfkhdf",
-      "id": 6
-    },
-    {
-      "phoneNumber": "9734594375",
-      "name": "eve.holt@reqres.in",
-      "password": "sdfsdf",
-      "id": 7
-    },
-    {
-      "phoneNumber": "2342352435",
-      "name": "eve.holt@reqres.in",
-      "password": "97323479",
-      "id": 8
-    },
-    {
-      "phoneNumber": "2352352323",
-      "name": "eve.holt@reqres.in",
-      "password": "sdfsdfs",
-      "id": 9
-    },
-    {
-      "phoneNumber": "2937403742",
-      "name": "eve.holt@reqres.in",
-      "password": "lsjdflsjd",
-      "id": 10
-    },
-    {
-      "phoneNumber": "4058405830",
-      "name": "",
-      "password": "sljsdf",
-      "id": 11
-    },
-    {
-      "phoneNumber": "9273492372",
-      "name": "eve.holt@reqres.in",
-      "password": "kfjdlsdjdf",
-      "id": 12
-    },
-    {
-      "phoneNumber": "9273592357",
-      "name": "",
-      "password": "ljfljds",
-      "id": 13
-    },
-    {
-      "phoneNumber": "2352352352",
-      "name": "sdfsd",
-      "password": "kljsldfjsd",
-      "id": 14
-    },
-    {
-      "phoneNumber": "9734572367",
-      "name": "askhdklasd",
-      "password": "ksdhfskd",
-      "id": 15
-    },
-    {
-      "phoneNumber": "9732997923",
-      "name": "sdfsd",
-      "password": "sdlfjsldfj",
-      "id": 16
-    },
-    {
-      "phoneNumber": "6457575758",
-      "name": "Sourabh",
-      "password": "sdlkjsdf",
-      "id": 17
-    },
-    {
-      "phoneNumber": "3453454534",
-      "name": "Sourabh",
-      "password": "ssdfsdfsd",
-      "id": 18
     }
   ]
 }
