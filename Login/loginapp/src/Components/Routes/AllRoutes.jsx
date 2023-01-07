@@ -1,14 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import Login from "../Login/Login";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import PrivateRoute from "../Login/PrivateRoute";
-import { loginAction, loginThunkAction } from "../Redux/Login/loginAction";
 import Home from "./Home";
 import Policy from "./Policy";
+import ErrorPage from "../Login/ErrorPage";
 function AllRoutes() {
-
   // const dispatch = useDispatch();
   // useEffect(() => {
   //   const userData = JSON.parse(sessionStorage.getItem("loggedInUserInfo"));
@@ -39,6 +36,7 @@ function AllRoutes() {
             </PrivateRoute>
           }
         />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
