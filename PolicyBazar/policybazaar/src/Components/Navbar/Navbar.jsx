@@ -8,12 +8,16 @@ import { useState } from "react"
 import {HiOutlineMenu} from "react-icons/hi"
 import Support from "./Support"
 import SideMenu from "./SideMenu"
+import { useDispatch, useSelector } from "react-redux";
+import {logoutAction} from "../Login/Redux/Login/loginAction";
 const Navbar=()=>
 {
     let logindata=JSON.parse(sessionStorage.getItem("loggedInUserInfo"))
     let navigate=useNavigate()
     const[hoverstate,sethoverstate]=useState({IP:false,RP:false,Cl:false,Sup:false})
-    const[display,setdisplay]=useState(false)
+    const[display,setdisplay]=useState(false);
+    const {isAuth} = useSelector((store) => store.login);
+    const dispatch = useDispatch();
     return(
         <div style={{display:"flex",alignItems:"center",width:"100%"}}>
             <div>
@@ -54,19 +58,18 @@ const Navbar=()=>
                 </div>
             </div>
             <div>
-                <button onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}><Link to="/login">{logindata&&logindata.isAuth?logindata.name:"Sign In"}</Link></button>
+                <button onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}><Link to="/login">{logindata&&logindata.isAuth?logindata.name:"SignIn"}</Link></button>
             </div>
+            { (isAuth) && 
             <div>
                 <button onClick={()=>
                 {
-                    const user = {
-                        isAuth: false,
-                        name: "",
-                        phoneNumber: "",
-                      };
-                      sessionStorage.setItem("loggedInUserInfo", JSON.stringify(user));
-                }} disabled={logindata&&logindata.isAuth?false:true} onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}>Sign out</button>
+                   logoutAction(dispatch);
+                }} disabled={isAuth?false:true}
+                
+                onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}>Logout</button>
             </div>
+}
         </div>
         {display?<SideMenu setdisplay={setdisplay}/>:null}
         {hoverstate.IP?<Insurance />:null}
