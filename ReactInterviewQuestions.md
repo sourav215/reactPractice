@@ -1,6 +1,14 @@
 ### 1. What is Reactjs?
 ```
-React is a JavaScript library that makes building user interfaces easy. It was developed by Facebook.
+React is a JavaScript library for building user interfaces. 
+It was developed by Facebook.
+
+It is an open-source, component-based, front-end library responsible only for the application view layer.
+The main objective of ReactJS is to develop User Interfaces (UI) that improves the speed of the apps. 
+It uses virtual DOM (JavaScript object), which improves the performance of the app.
+The JavaScript virtual DOM is faster than the regular DOM.
+ We can use ReactJS on the client and server-side as well as with other frameworks.
+
 ```
 1) Does React use HTML?
 No, It uses JSX, which is similar to HTML.
