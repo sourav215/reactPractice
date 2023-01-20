@@ -27,9 +27,10 @@ No, It uses JSX, which is similar to HTML.
 ### 4. Give me two most significant drawbacks of React
 
 ```
-   <li> Integrating React with the MVC framework like Rails requires complex
-   configuration.</li>
-   <li> React require the users to have knowledge about the integration of user interface into MVC framework. </li>
+   1. Integrating React with the MVC framework like Rails requires complex
+   configuration.
+   2. React require the users to have knowledge about the integration of user interface into MVC framework.
+   <a>https://www.javatpoint.com/pros-and-cons-of-react </a>
 ```
 
 1. State the difference between Real DOM and Virtual DOM
