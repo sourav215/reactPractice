@@ -295,11 +295,13 @@ software application. All information retrieved by the Store is produced by the 
 ```
 An anchor tag, also known as a link or hyperlink, is an HTML element used to create links to other pages or websites. It is typically represented by the <a> tag.
 
-The Link component in React is a way to create a link that is handled by the React router. It is used to navigate within a single-page application (SPA) and does not cause a `full page reload when clicked`. It is similar to the anchor tag in HTML, but it is implemented as a React component and can be used in `conjunction` with the React router to handle client-side routing.
+In React, the Link component is a higher-order component (HOC) provided by the react-router-dom library. It is used to navigate within a single-page application (SPA) and does not cause a `full page reload when clicked`. It is similar to the anchor tag in HTML, but it is implemented as a React component and can be used in `conjunction` with the React router to handle client-side routing.
 
 ```
 
 ### What is Single Page Application (SPA) ?
 ```
+A Single Page Application (SPA) is a web application or website that loads a single HTML page and dynamically updates the content as the user interacts with the app. 
 
+* Traditional web applications, reload the entire page each time the user clicks a link or submits a form (takes an action).
 ```
