@@ -195,7 +195,6 @@ function.
   reusing component logic. It is not a part of the React API, but they are a pattern which
   emerges from React’s compositional nature.
 - Higher Order Components (HOC) in React are a design pattern that allows developers to reuse component logic. HOCs are a way to share behavior among components. They are a higher-order function that takes a component as an argument and returns a new component with additional functionality. The returned component is a "wrapped" version of the original component, with the added functionality being provided by the HOC. This allows for code reuse and separation of concerns, making it easier to manage and maintain the codebase. HOCs are often used for tasks such as authentication, performance optimization, and props manipulation.
--
 
 ### Explain the Presentational segment
 
