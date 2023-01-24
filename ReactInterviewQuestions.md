@@ -290,3 +290,16 @@ software application. All information retrieved by the Store is produced by the 
 41. What is the use of ‘props-types’ liberary?
     'Prop-types' library allows you to perform runtime type checking for props and similar
     object in a recent application
+
+### What is diff between anchor tag and Link component in React ?
+```
+An anchor tag, also known as a link or hyperlink, is an HTML element used to create links to other pages or websites. It is typically represented by the <a> tag.
+
+The Link component in React is a way to create a link that is handled by the React router. It is used to navigate within a single-page application (SPA) and does not cause a `full page reload when clicked`. It is similar to the anchor tag in HTML, but it is implemented as a React component and can be used in `conjunction` with the React router to handle client-side routing.
+
+```
+
+### What is Single Page Application (SPA) ?
+```
+
+```
