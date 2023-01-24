@@ -50,7 +50,7 @@ Development Process is very fast.
 Uses Single directional data flow model. (One-directional data binding)
 ```
 
-### Advantages of React
+### Disdvantages of React
 
 - High pace of development: React's development moves quickly which means that there are often new updates, features, and changes to keep up with.
 - Complexity: React applications can become complex if they are not well-structured, particularly as the number of components grows.
