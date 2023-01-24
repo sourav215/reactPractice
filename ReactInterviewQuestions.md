@@ -2,7 +2,7 @@
 
 ```
 React is a JavaScript library for building user interfaces.
-It was developed by Facebook.
+It was developed by Jordan Walke, Facebook.
 
 It is an open-source, component-based, front-end library responsible only for the application view layer.
 The main objective of ReactJS is to develop User Interfaces (UI) that improves the speed of the apps.
@@ -129,6 +129,11 @@ It's a new technique to create react element.
 Browser doesn't understand JSX.
 
 ```
+### What is DOM ?
+
+* The Document Object Model (DOM) is a `programming interface` for HTML and XML documents. 
+* It represents the structure of a document as a tree-like hierarchy of nodes, where each node represents an element.
+
 ### What is virtual DOM ?
 <a>https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-render-in-reactjs</a>
 
@@ -304,4 +309,8 @@ In React, the Link component is a higher-order component (HOC) provided by the r
 A Single Page Application (SPA) is a web application or website that loads a single HTML page and dynamically updates the content as the user interacts with the app. 
 
 * Traditional web applications, reload the entire page each time the user clicks a link or submits a form (takes an action).
+* SPAs are built using JavaScript frameworks and libraries such as Angular, React, and Vue.js. They use client-side routing to handle navigation and update the app's URL, allowing users to share and bookmark specific pages within the app.
+* Compared to the “traditional” application, SPA is less secure. Due to Cross-Site Scripting (XSS), it enables attackers to inject client-side scripts into web application by other users.
+
+
 ```
