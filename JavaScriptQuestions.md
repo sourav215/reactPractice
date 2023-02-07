@@ -11,15 +11,19 @@ JavaScript provides different data types to hold different types of values. Ther
 - Non-primitive (reference) data type
 
 ### Primitive data types:
-Primitive data types are a set of basic data types (predefined) from which all other data types are constructed and it has no additional methods.
-They are the building blocks of data manipulation and cannot be further divided into simpler data types.
+- Primitive data types are a set of basic data types (predefined) from which all other data types are constructed and it has no additional methods.
+- They are the building blocks of data manipulation and cannot be further divided into simpler data types.
+  
 ex - String , Number , Boolean , Null , Undefined
 
+
 ### Non-Primitive Data types:
-Non-Primitive data types are user-defined (not predefined) data types that refers to an instance or object. 
-They cannot store the `value` of a variable directly in memory. They store a `memory address` of the variable.
-Whenever a non-primitive data type is defined, it refers a memory location where the data is stored in heap memory.
- These data types are used to store multiple values.
+- Non-Primitive data types are user-defined (not predefined) data types that refer to instances or objects. 
+- They cannot store the `value` of a variable directly in memory. They store a `memory address` of the variable.
+- Whenever a non-primitive data type is defined, it refers a memory location where the data is stored in heap memory.
+- These data types are used to store multiple values.
+
+ex - Object , Array , RegExp
 
 
 ## What is var , let and Const
