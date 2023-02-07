@@ -30,21 +30,22 @@ ex - Object , Array , RegExp
 
 ## Explain Diff btw number data type and BigInt
 
-### Explain about Control statement and diff btween if else if and switch
+## Explain about Control statement and diff btween if else if and switch
 
-### What is Object and Array
+## What is Object and Array
 
-### Explore All Array Methods and String Methods
+## Explore All Array Methods and String Methods
 
-### Diff between forEach() Map() and filter()
+## Diff between forEach() Map() and filter()
 
-### Diff between slice and splice
+## Diff between slice and splice
 
-### Diff btw == and ===
+## Diff btw == and ===
 
-### What is for..in and for.. of
+## What is for..in and for.. of
 
-### What is DOM and DOM Manipulation
+## What is DOM and DOM Manipulation
+
 
 ### What is call apply bind
 
@@ -57,11 +58,17 @@ ex - Object , Array , RegExp
 ### Explain Clousers, Why do we need it
 
 ### Explain Fetch
+The fetch() method in JavaScript is used to request data from a server. The request can be of any type of API that returns the data in JSON or XML. The fetch() method requires one parameter, the URL to request, and returns a `promise`.
 
 ### Why we need to handle then() two times in fetch
 
 ### What is OOPs and Explain its Features
+https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
 
+## What is Spread Operetor ?
+The JavaScript spread operator ( ... ) allows us to quickly copy all or part of an existing array or object into another array or object.
+## What is Rest Parameter ?
+The rest parameter is an improved way to handle function parameters, allowing us to more easily handle various inputs as parameters in a function. The rest parameter syntax allows us to represent an indefinite number of arguments as an array. With the help of a rest parameter, a function can be called with any number of arguments, no matter how it was defined. Rest parameter is added in ES2015 or ES6 which improved the ability to handle parameter.
 ### What is diff btw spread OPerator and rest Parameter
 
 ### Explain about this keyword in JS
@@ -100,7 +107,11 @@ ex - Object , Array , RegExp
 
 ### Regular Expressions
 
-### What is Hositing and Shadowing
+### What is Hositing 
+## What is Shadowing
+- Variable shadowing occurs when a variable declared within a certain scope (decision block, method, or inner class) has the same name as a variable declared in an outer scope. This outer variable is said to be shadowed.
+
+- If there is a variable in the global scope, and you'd like to create a variable with the same name in a function. The variable in the inner scope will temporarily shadow the variable in the outer scope.
 
 ### Diff between var, let and Const
 
