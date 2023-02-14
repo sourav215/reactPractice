@@ -159,9 +159,19 @@ The rest parameter is an improved way to handle function parameters, allowing us
 
 - If there is a variable in the global scope, and you'd like to create a variable with the same name in a function. The variable in the inner scope will temporarily shadow the variable in the outer scope.
 
-### Diff between var, let and Const
+## Diff between var, let and Const
 
-### Explain Module Concept in JS
+| Var                                                                | Let                                                                | const                                                               |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| var has the function or global scope.                              | let's have the block scope.                                        | const variable has the block scope.                                 |
+| It gets hoisted to the top of its scope and initialized undefined. | It also got hoisted to the top of its scope but didn't initialize. | It also got hoisted to the top of its scope but didn't initialize.  |
+| It can be updated or re-declared.                                  | It can only be updated and can't be re-declared.                   | It can't be updated or re-declared.                                 |
+| It's an old way to declare a variable.                             | It's a new way to declare variables introduced in ES6.             | It's also a new way to declare a variable, which introduces in ES6. |
+
+## Explain Module Concept in JS
+
+- In JavaScript, a module is a self-contained unit of code that can be used to encapsulate related functions, variables, and objects.
+- Modules allow developers to create reusable code that can be shared and imported by other parts of an application, making it easier to organize and maintain large codebases.
 
 ### Debouncing
 
