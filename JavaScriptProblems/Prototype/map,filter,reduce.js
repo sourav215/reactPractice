@@ -1,3 +1,11 @@
+
+/*
+What is Pollyfil ?
+
+- A script that updates/adds new functions on browser is called “polyfill”. 
+- It “fills in” the gap and adds missing implementations.
+*/
+
 function MyArray() {
   this.length = 0;
 }
