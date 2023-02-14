@@ -210,8 +210,7 @@ Example - 3
 ```js
 function curry(func) {
   return function curried(...args) {
-    if (args.length >= func.length) {
-      // 'func.length' returns no of args it is accepting
+    if (args.length >= func.length) {    // 'func.length' returns no of args it is accepting
       return func.apply(this, args);
     } else {
       return function (...args2) {
