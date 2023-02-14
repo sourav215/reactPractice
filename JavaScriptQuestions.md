@@ -208,13 +208,27 @@ console.log(twentyPercentDiscount(1200));
 Example - 3
 
 ```js
+// function curry(func) {
+//   return function curried(...args) {
+//     // 'func.length' returns no of args it is accepting
+//     if (args.length >= func.length) {
+//       return func.apply(this, args);
+//     } else {
+//       return function (...args2) {
+//         return curried.apply(this, [...args, ...args2]);
+//       };
+//     }
+//   };
+// }
+
 function curry(func) {
   return function curried(...args) {
-    if (args.length >= func.length) {    // 'func.length' returns no of args it is accepting
-      return func.apply(this, args);
+    // 'func.length' returns no of args it is accepting
+    if (args.length >= func.length) {
+      return func(...args);
     } else {
       return function (...args2) {
-        return curried.apply(this, [...args, ...args2]);
+        return curried(...args, ...args2);
       };
     }
   };
@@ -231,6 +245,8 @@ console.log(curriedSum(1)(2, 3, 4));
 console.log(curriedSum(1, 2)(3, 4));
 console.log(curriedSum(1, 2, 3)(4));
 ```
+
+We can use `_.curry()` Method from Lodash Library.
 
 ### Throttling
 
