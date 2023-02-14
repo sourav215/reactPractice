@@ -47,7 +47,35 @@ ex - Object , Array , RegExp
 
 ## What is DOM and DOM Manipulation
 
-### What is call apply bind
+### What are call() apply() bind()
+
+- Predefined JavaScript methods.
+- Used to couple a function with an object.
+- Used to controll where `this` should refer.
+- call() and apply() methods provides new value of `this` and calls the function immediately.
+- bind() method sets `this` keyword and returns a constructor function.
+
+Example - 1
+
+```js
+const person = {
+  name: "Rohan",
+  age: 24,
+};
+
+function showDetails(gender, hobby) {
+  this.gender = gender;
+  this.hobby = hobby;
+  console.log(this.name, this.age);
+}
+
+showDetails.call(person, "Male", "Reading Books");
+
+showDetails.apply(person, ["Male", "Reading Books"]);
+
+const mybind = showDetails.bind(person, "Male", "Reading Books");
+mybind();
+```
 
 ### What is Promise and Explain Promise
 
