@@ -131,33 +131,34 @@ The rest parameter is an improved way to handle function parameters, allowing us
 - The idea is to wait for a certain amount of time after the last invocation of a function before actually executing it, in order to prevent multiple, rapid consecutive invocations.
 - This is often useful in situations where a function is attached to an event that is triggered frequently, such as a window resize event or an input field's keyup event.
 
-Example - 1 
-```js
-let id; 
-function debounce( func ){ 
-    if(id) {
-        clearTimeout(id);
-    }
+Example - 1
 
-    id = setTimeout(func, 2000); 
+```js
+let id;
+function debounce(func) {
+  if (id) {
+    clearTimeout(id);
+  }
+
+  id = setTimeout(func, 2000);
 }
 
-function postRequest(){
-    console.log("request send ...");
+function postRequest() {
+  console.log("request send ...");
 }
 
 // debounce(postRequest); // 10 sec
-// debounce(postRequest); //10.1 sec 
+// debounce(postRequest); //10.1 sec
 // debounce(postRequest); // 10.2 sec
 
 debounce(postRequest);
 
-setTimeout(()=>{ 
-    debounce(postRequest);
-},3000);
-setTimeout(()=>{ 
-    debounce(postRequest);
-},4000);
+setTimeout(() => {
+  debounce(postRequest);
+}, 3000);
+setTimeout(() => {
+  debounce(postRequest);
+}, 4000);
 ```
 
 ### Currying
@@ -169,36 +170,67 @@ setTimeout(()=>{
 - This allows you to partially apply arguments to the function, creating a new function that takes the remaining arguments.
 
 Example - 1
+
 ```js
 // Normal Function
-function multiply(a, b, c){
-    return a * b * c;
+function multiply(a, b, c) {
+  return a * b * c;
 }
-console.log(multiply(1,2,3));
+console.log(multiply(1, 2, 3));
 
 // Curried Version
-function curriedMultiply(a){
-    return function (b) {
-        return function (c) {
-            return a * b * c;
-        }
-    }
+function curriedMultiply(a) {
+  return function (b) {
+    return function (c) {
+      return a * b * c;
+    };
+  };
 }
 console.log(curriedMultiply(1)(2)(3));
 ```
+
 Example - 2
+
 ```js
 // Discount Function
-function discount(disc){
-    return function(price){
-        return price - price*disc;
-    }
+function discount(disc) {
+  return function (price) {
+    return price - price * disc;
+  };
 }
 const tenPercentDiscount = discount(0.1);
 const twentyPercentDiscount = discount(0.2);
 
 console.log(tenPercentDiscount(500));
 console.log(twentyPercentDiscount(1200));
+```
+
+Example - 3
+
+```js
+function curry(func) {
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      // 'func.length' returns no of args it is accepting
+      return func.apply(this, args);
+    } else {
+      return function (...args2) {
+        return curried.apply(this, [...args, ...args2]);
+      };
+    }
+  };
+}
+
+function sum(a, b, c, d) {
+  return a + b + c + d;
+}
+
+let curriedSum = curry(sum);
+
+console.log(curriedSum(1, 2, 3, 4));
+console.log(curriedSum(1)(2, 3, 4));
+console.log(curriedSum(1, 2)(3, 4));
+console.log(curriedSum(1, 2, 3)(4));
 ```
 
 ### Throttling
