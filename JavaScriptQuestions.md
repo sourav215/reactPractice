@@ -173,7 +173,7 @@ The rest parameter is an improved way to handle function parameters, allowing us
 - In JavaScript, a module is a self-contained unit of code that can be used to encapsulate related functions, variables, and objects.
 - Modules allow developers to create reusable code that can be shared and imported by other parts of an application, making it easier to organize and maintain large codebases.
 
-### Debouncing
+## Debouncing
 
 - In JavaScript, debouncing is a technique used to control the rate at which a function is executed.
 - The idea is to wait for a certain amount of time after the last invocation of a function before actually executing it, in order to prevent multiple, rapid consecutive invocations.
