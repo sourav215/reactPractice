@@ -378,14 +378,22 @@ In React, the Link component is a higher-order component (HOC) provided by the r
 
 ```
 
-### What is Single Page Application (SPA) ?
+## What is Single Page Application (SPA) ?
 
-```
 A Single Page Application (SPA) is a web application or website that loads a single HTML page and dynamically updates the content as the user interacts with the app.
 
-* Traditional web applications, reload the entire page each time the user clicks a link or submits a form (takes an action).
-* SPAs are built using JavaScript frameworks and libraries such as Angular, React, and Vue.js. They use client-side routing to handle navigation and update the app's URL, allowing users to share and bookmark specific pages within the app.
-* Compared to the “traditional” application, SPA is less secure. Due to Cross-Site Scripting (XSS), it enables attackers to inject client-side scripts into web application by other users.
+- Traditional web applications, reload the entire page each time the user clicks a link or submits a form (takes an action).
+- SPAs are built using JavaScript frameworks and libraries such as Angular, React, and Vue.js. They use client-side routing to handle navigation and update the app's URL, allowing users to share and bookmark specific pages within the app.
+- Compared to the “traditional” application, SPA is less secure. Due to Cross-Site Scripting (XSS), it enables attackers to inject client-side scripts into web application by other users.
 
+## What is useCallback ?
 
-```
+https://codesandbox.io/s/usecallback-usememo-memo-0tl5ke
+
+## What is memo ?
+
+https://codesandbox.io/s/usecallback-usememo-memo-0tl5ke
+
+## What is useMemo ?
+
+https://codesandbox.io/s/usecallback-usememo-memo-0tl5ke

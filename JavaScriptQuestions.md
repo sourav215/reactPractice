@@ -149,7 +149,16 @@ The rest parameter is an improved way to handle function parameters, allowing us
 
 ### Explain Storages of Browser
 
-### Regular Expressions
+## Regular Expressions
+
+A regular expression is a sequence of characters that forms a `search pattern`.
+
+The search pattern can be used for text search and text replace operations.
+
+Uses -
+
+- Validate User Input
+- Search Inside text
 
 ### What is Hositing
 
