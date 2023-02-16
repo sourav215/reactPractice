@@ -101,8 +101,9 @@ console.log(min);
 ### Advantages of closures
 
 1. They provide `data encapsulation`.
-2. They help to remove redundant code.
-3. They help you to write neat and `modular code`.
+2. Time optimization
+3. They help to remove redundant code.
+4. They help you to write neat and `modular code`.
 
 _Encapsulation: Closures allow you to create private variables and functions that are inaccessible from the outside world, which helps to keep your code modular and organized._
 
@@ -248,6 +249,26 @@ Uses -
 
 - In JavaScript, a module is a self-contained unit of code that can be used to encapsulate related functions, variables, and objects.
 - Modules allow developers to create reusable code that can be shared and imported by other parts of an application, making it easier to organize and maintain large codebases.
+
+Example -
+
+```js
+var Module = (function () {
+  function privateMethod() {
+    // do something
+    console.log("Private Data..");
+  }
+  return {
+    publicMethod: function () {
+      // can call private methods
+      privateMethod();
+    },
+  };
+})();
+
+Module.privateMethod(); // throw error
+Module.publicMethod(); // Private data..
+```
 
 ## Debouncing
 
