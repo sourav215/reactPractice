@@ -95,6 +95,63 @@ console.log(min);
 
 ### Explain Clousers, Why do we need it
 
+- A closure is the combination of a function bundled together with references to its surrounding state (the lexical environment).
+- A closure allows a function to access variables and other data from the outer scope, even after the outer function has returned (executed ).
+
+### Advantages of closures
+
+1. They provide `data encapsulation`.
+2. They help to remove redundant code.
+3. They help you to write neat and `modular code`.
+
+_Encapsulation: Closures allow you to create private variables and functions that are inaccessible from the outside world, which helps to keep your code modular and organized._
+
+### Disadvantages of closures
+
+1. The variables declared inside a closure are `not garbage collected`.
+2. Too many closures can `slow down your application`. This is actually caused by duplication of code in the memory.
+
+Example - 1
+
+```js
+function grand(a) {
+  return function parent(b) {
+    return function son(c) {
+      return function grandson(d) {
+        console.log(a + b + c + d);
+      };
+    };
+  };
+}
+const fun1 = grand(10);
+const fun2 = fun1(8);
+const fun3 = fun2(6);
+
+// console.dir(fun1);
+// console.dir(fun2);
+console.dir(fun3);
+```
+
+Example - 2 (data encapsulation)
+
+```js
+function temporary() {
+  let counter = 0;
+  return function () {
+    counter++;
+    console.log(counter);
+  };
+}
+
+const add1 = temporary();
+const add2 = temporary();
+
+add1();
+add1();
+
+add2();
+```
+
 ### Explain Fetch
 
 The fetch() method in JavaScript is used to request data from a server. The request can be of any type of API that returns the data in JSON or XML. The fetch() method requires one parameter, the URL to request, and returns a `promise`.

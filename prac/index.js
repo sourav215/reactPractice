@@ -1,8 +1,15 @@
-let obj = {
-    name: "abc"
+function temporary() {
+  let counter = 0;
+  return function () {
+    counter++;
+    console.log(counter);
+  };
 }
-let obj2 = {
-    age: "25"
-}
-obj2.__proto__ = obj;
-console.log(obj2.name);
+
+const add1 = temporary();
+const add2 = temporary();
+
+add1();
+add1();
+
+add2();
