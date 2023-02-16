@@ -98,6 +98,10 @@ console.log(min);
 - A closure is the combination of a function bundled together with references to its surrounding state (the lexical environment).
 - A closure allows a function to access variables and other data from the outer scope, even after the outer function has returned (executed ).
 
+In other words,
+
+- closure is a `function instance` remembering its outer variables even after the outer function has executed.
+
 ### Advantages of closures
 
 1. They provide `data encapsulation`.
