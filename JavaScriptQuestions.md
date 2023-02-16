@@ -217,7 +217,17 @@ Uses -
 - Validate User Input
 - Search Inside text
 
-### What is Hositing
+## What is Hositing
+
+- Hoisting is JavaScript's defalt behavior of moving `declarations` to the top.
+- This means a function or a variable can be used before it has been declared.
+- Javascript hoists only `declarations` not `initialization`
+
+| Keywords | Top                                         | Same Line                                                  |
+| -------- | ------------------------------------------- | ---------------------------------------------------------- |
+| var      | Declaration + Memory Allocation (undefined) | Assign Value                                               |
+| let      | Declaration                                 | Memory Allocation (undefined) + Assign Value               |
+| const    | x                                           | Declaration + Memory Allocation (undefined) + Assign Value |
 
 ## What is Shadowing
 
