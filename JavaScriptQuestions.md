@@ -177,9 +177,9 @@ The rest parameter is an improved way to handle function parameters, allowing us
 
 ### What is diff btw spread OPerator and rest Parameter
 
-### Explain about this keyword in JS
+## Explain about this keyword in JS
 
-### Explain Prototype
+## Explain Prototype
 
 ### What is event
 
@@ -209,7 +209,12 @@ The rest parameter is an improved way to handle function parameters, allowing us
 
 ### What is Browser Object Model (BOM)
 
-### Explain Storages of Browser
+BOM stands for Browser Object Model.
+The BOM is not part of the core JavaScript language specification.
+A set of APIs that are implemented by the browser.
+That provide access to the web browser's `window` and `document` objects, and other `browser-specific functionality`, such as the ability to manipulate the browser's history, location, and cookies.
+
+## Explain Storages of Browser
 
 ## Regular Expressions
 
@@ -402,6 +407,33 @@ We can use `_.curry()` Method from Lodash Library.
 ### Async vs defer
 
 ## What is Execution Context
+
+An environment in which the JavaScript code is executed.
+
+When the JavaScript engine scans a script file, it makes an environment called the Execution Context that handles the entire transformation and execution of the code.
+There are two types of execution contexts: <b>global</b> and <b>function</b>.
+
+1. The global execution context is created when a JavaScript script first starts to run, and it represents the global scope in JavaScript.
+
+2. A function execution context is created whenever a function is called, representing the function's local scope.
+
+## What are the Phases of Execution Context
+
+There are two phases of JavaScript execution context:
+
+<b> Creation phase:</b>
+
+1. Set `this`
+2. creates `arguments` object
+3. Stores the variables with values as `undefined` and function `references`
+
+<b> Execution phase: </b>
+
+1. assign the values to variables and call functions.
+
+## What is the Call Stack?
+
+A Stack used to keep the track of all the contexts, including global and functional. A call stack is also known as an 'Execution Context Stack', 'Runtime Stack', or 'Machine Stack'.
 
 ## What is Event loop
 
