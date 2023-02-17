@@ -400,3 +400,21 @@ We can use `_.curry()` Method from Lodash Library.
 ### Throttling
 
 ### Async vs defer
+
+## What is Execution Context
+
+## What is Event loop
+
+The event loop is a key mechanism in JavaScript's runtime environment that manages the execution of asynchronous code.
+
+<img width="800px" src="JavaScriptProblems/Images/Eventloop.jpg"/>
+
+## Difference between Event loop in JavaScript and Event loop in nodejs
+
+The event loop is a critical component of both Node.js and JavaScript, but there are some important differences between the two.
+
+In JavaScript, the event loop is a part of the browser's runtime environment, and it manages the execution of asynchronous code. When an asynchronous operation is started, such as a network request or a setTimeout() call, the event loop schedules the callback function to run once the operation completes. The event loop is responsible for continuously monitoring the call stack and the task queue, and it ensures that the callback functions are executed in the correct order.
+
+In Node.js, the event loop is also responsible for managing the execution of asynchronous code, but it operates in a different way compared to the browser's event loop. Node.js uses the libuv library to implement its event loop, which allows it to handle I/O operations more efficiently. When a Node.js application starts, it initializes the event loop and begins processing incoming requests. Each request is processed asynchronously, and the event loop schedules the corresponding callback function to run when the operation completes. Node.js also includes several other features, such as the ability to create child processes and handle streams, that require more sophisticated event loop management.
+
+In summary, while the basic function of the event loop is similar in both JavaScript and Node.js, the way it is implemented and its capabilities differ. Node.js has a more complex and powerful event loop that allows it to handle a wider range of I/O operations and other tasks.
