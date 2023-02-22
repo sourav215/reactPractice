@@ -89,9 +89,16 @@ console.log(min);
 
 ### What is Promise and Explain Promise
 
+
 ### What is Promise Chain
 
 ### Drawback of Callbacks and what is callback chain
+
+### What is aync await
+
+### In how many ways we can handle Promise
+
+### Why do we need Promise
 
 ### Explain Clousers, Why do we need it
 
@@ -161,9 +168,10 @@ add2();
 
 The fetch() method in JavaScript is used to request data from a server. The request can be of any type of API that returns the data in JSON or XML. The fetch() method requires one parameter, the URL to request, and returns a `promise`.
 
-### Why we need to handle then() two times in fetch
+## Why we need to handle then() two times in fetch
+To convert stream 
 
-### What is OOPs and Explain its Features
+## What is OOPs and Explain its Features
 
 https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/
 
@@ -189,11 +197,7 @@ The rest parameter is an improved way to handle function parameters, allowing us
 
 ### How can we restrict Event Bubbling and Event Capturng behaviour
 
-### What is aync await
 
-### In how many ways we can handle Promise
-
-### Why do we need Promise
 
 ### What is diff between normal function and arrow function
 
@@ -279,43 +283,7 @@ Module.privateMethod(); // throw error
 Module.publicMethod(); // Private data..
 ```
 
-## Debouncing
-
-- In JavaScript, debouncing is a technique used to control the rate at which a function is executed.
-- The idea is to wait for a certain amount of time after the last invocation of a function before actually executing it, in order to prevent multiple, rapid consecutive invocations.
-- This is often useful in situations where a function is attached to an event that is triggered frequently, such as a window resize event or an input field's keyup event.
-
-Example - 1
-
-```js
-let id;
-function debounce(func) {
-  if (id) {
-    clearTimeout(id);
-  }
-
-  id = setTimeout(func, 2000);
-}
-
-function postRequest() {
-  console.log("request send ...");
-}
-
-// debounce(postRequest); // 10 sec
-// debounce(postRequest); //10.1 sec
-// debounce(postRequest); // 10.2 sec
-
-debounce(postRequest);
-
-setTimeout(() => {
-  debounce(postRequest);
-}, 3000);
-setTimeout(() => {
-  debounce(postRequest);
-}, 4000);
-```
-
-### Currying
+## Currying
 
 - It's a programming paradigm or pattern.
 - Currying is a technique in functional programming where a function is transformed into a sequence of functions, each taking a single argument.
@@ -402,7 +370,93 @@ console.log(curriedSum(1, 2, 3)(4));
 
 We can use `_.curry()` Method from Lodash Library.
 
-### Throttling
+## Debouncing
+
+- In JavaScript, debouncing is a technique used to control the rate at which a function is executed.
+- Used to optimize event handling
+- The idea is to wait for a certain amount of time after the last invocation of a function before actually executing it, in order to prevent multiple, rapid consecutive invocations.
+- This is often useful in situations where a function is attached to an event that is triggered frequently, such as a window resize event or an input field's keyup event.
+
+Example - 1
+
+```js
+let id;
+function debounce(func) {
+  if (id) {
+    clearTimeout(id);
+  }
+
+  id = setTimeout(func, 2000);
+}
+
+function postRequest() {
+  console.log("request send ...");
+}
+
+// debounce(postRequest); // 10 sec
+// debounce(postRequest); //10.1 sec
+// debounce(postRequest); // 10.2 sec
+
+debounce(postRequest);
+
+setTimeout(() => {
+  debounce(postRequest);
+}, 3000);
+setTimeout(() => {
+  debounce(postRequest);
+}, 4000);
+```
+
+Example - 2 (Polyfill)
+
+```js
+const myDebounce = (callback, delay) => {
+  let id;
+  return function (...args) {
+    if (id) {
+      clearTimeout(id);
+    }
+    id = setTimeout(() => {
+      callback(...args);
+    }, delay);
+  };
+};
+
+const debounce = myDebounce(() => {
+  console.log("req send ..");
+}, 1000);
+debounce();
+debounce();
+debounce();
+```
+
+## Throttling
+
+- Throttling is a technique used in JavaScript to limit the number of times a function can be called within a specified time interval.
+- Used to optimize event handling
+
+Example - 1 (Throttle Polyfill)
+
+```js
+const myThrottle = (callback, delay) => {
+  let prev = 0;
+  return function (...args) {
+    let curr = new Date().getTime();
+    if (curr - prev < delay) {
+      return;
+    }
+    prev = curr;
+    return callback(...args);
+  };
+};
+
+const throttle = myThrottle(() => {
+  console.log("req send ..");
+}, 1000);
+throttle();
+throttle();
+throttle();
+```
 
 ### Async vs defer
 
