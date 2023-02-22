@@ -30,8 +30,10 @@ app.patch("/patchtodo/:id", async (req, res) => {
   try {
     const {id} = req.params;
     const data = req.body;
+    // console.log(data);
     const updatedTodo = await patchTodo(id, data);
     res.send(updatedTodo);
+    res.send("test")
   } catch (err) {
     console.log(err);
     res.status(500).send("Can't Update Data");
