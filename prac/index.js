@@ -1,12 +1,17 @@
-function timer() {
-  for (var i = 1; i < 5; i++) {
-    function close(i) {
-      console.log("i", i);
-      setTimeout(() => {
-        console.log(i);
-      }, 1000);
+function foo(){
+  let a = 10;
+  return function child(){
+    let b = 20;
+    return function(){
+      console.log(a+b);
+      // console.log("hello");
     }
-    close(i);
   }
 }
-timer();
+
+let goat = foo();
+let cow = goat();
+
+console.dir(cow);
+
+
