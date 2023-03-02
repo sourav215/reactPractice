@@ -255,79 +255,9 @@ console.log(ans)
 
 
 
-// let john = { name: "John", surname: "Smith", id: 1 };
-// let pete = { name: "Pete", surname: "Hunt", id: 2 };
-// let mary = { name: "Mary", surname: "Key", id: 3 };
-
-// let users = [ john, pete, mary ];
-
-// let usersMapped = users.map(({name,surname,id}) => ({
-//   fullName:name + " " + surname,
-//   id
-// }))  /* ... your code ... */
-
-// /* 
-// end result/sample output: 
-// usersMapped = [
-//   { fullName: "John Smith", id: 1 },
-//   { fullName: "Pete Hunt", id: 2 },
-//   { fullName: "Mary Key", id: 3 }
-// ]
-// */
-
-// console.log(usersMapped);    
-// console.log(usersMapped[0].id) // 1
-// console.log(usersMapped[0].fullName) // John Smith
-
-// /*
-//  form a new array using the users array
-//  the new array is expected to have objects with the following properties:
-//   - fullName: <name><space><surname> 
-//   - id: <id>
-//  check the end result / sample output in the comment above. 
-// */
 
 
 
-
-
-// let data = [
-//   { name: "John", subject: "Javascript" },
-//   { name: "John", subject: "HTML" },
-//   { name: "John", subject: "CSS" },
-//   { name: "Pete", subject: "Java" },
-//   { name: "Pete", subject: "English" },
-//   { name: "Pete", subject: "Maths" },
-//   { name: "Mary", subject: "Rust" },
-//   { name: "Mary", subject: "Elm" },
-// ]
-
-// let subjectHash = data.reduce((acc, item) => {
-//   // iteration 1 - acc: {}
-//   // iteration 1 - item: { name: "John", subject: "Javascript" }
-
-//   acc[item.name] = acc[item.name] ? [...acc[item.name],item.subject] : [item.subject]
-  
-//   // iteraction 1 - acc:
-//   return acc;
-// }, {})
-
-// console.log(subjectHash);
-/*
-Expected output:
-{
-  John: ["Javascript", "HTML", "CSS"],
-  Pete: ["Java", "English", "Maths"],
-  Mary: ["Rust", "Elm"]
-}
-*/
-
-// /*
-//  - Use proper array methods to create an object from the data arrray.
-//  - from the data, the name would become the key of the new object.
-//  - keys must be unique, one key per user.
-//  - the value would be an array of their subjects.
-// */
 
 
 

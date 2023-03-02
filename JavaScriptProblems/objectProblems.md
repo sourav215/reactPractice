@@ -100,3 +100,42 @@ let subjectHash = data.reduce((acc, item) => {
 
 console.log(subjectHash);
 ```
+
+## Problem 4
+
+```js
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [john, pete, mary];
+
+let usersMapped = /* ... your code ... */ ;
+console.log(usersMapped);
+
+/*
+Expected output:
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+```
+
+### Solution
+
+```js
+let usersMapped = users.map((ele) => {
+  return {
+    fullName: ele.name + " " + ele.surname,
+    id: ele.id,
+  };
+});
+console.log(usersMapped);
+```
+
+## Problem 5
+```js
+
+```
