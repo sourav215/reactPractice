@@ -313,14 +313,14 @@ console.log(ans)
 // }, {})
 
 // console.log(subjectHash);
-// /*
-// Expected output:
-// {
-//   John: ["Javascript", "HTML", "CSS"],
-//   Pete: ["Java", "English", "Maths"],
-//   Mary: ["Rust", "Elm"]
-// }
-// */
+/*
+Expected output:
+{
+  John: ["Javascript", "HTML", "CSS"],
+  Pete: ["Java", "English", "Maths"],
+  Mary: ["Rust", "Elm"]
+}
+*/
 
 // /*
 //  - Use proper array methods to create an object from the data arrray.
@@ -333,66 +333,3 @@ console.log(ans)
 
 
 
-let users = [
-  {age: 16},
-  {age: 20},
-  {age: 23},
-  {age: 30}
-];
-
-// [16, 20, 23, 30]
-
-let newArr = users.reduce((acc, item)=> {
-  // iteration 2 - acc: [16]
-  // iteration 2 - item: {age: 20}
-  acc.push(item.age);
-  return acc;
-},[])
-
-
-// // let newArr = users.map((item) => {
-// //   return item.age * 2;
-// // });
-
-
-
-// console.log(newArr); // [16,20,23,30]
-
-// /*
-// Problem Statement: 
-
-// Use proper array method such that the newArr becomes: 
-//  [16,20,23,30]
- 
-// The newArr is simply an array of numbers, in this problem the ages of the users. 
-// */
-
-
-
-
-
-
-
-// let users = [
-//   {id: 1, name: "John"},
-//   {id: 2, name: "Pete"},
-//   {id: 3, name: "Mary"}
-// ];
-
-// let obj = {}
-// let newArr = users.map((elem) => obj[elem.name] = elem.id  ) /* your code here */
-
-// console.log(newArr)
-  
-/*
-Use proper array method such that the newArr becomes: 
- {John: 1, Pete: 2, Mary: 3}
- 
-Note: the order doesnot matter here. 
-
-Problem Statement: you are expected to use of the array mehtods
-to create a new object called newArr using the users Array.
-
-the keys of the new object (newArr) would be the name of the user 
-and the values would be the id of the user
-*/

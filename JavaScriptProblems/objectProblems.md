@@ -42,19 +42,6 @@ let newArr =
   console.log(newArr); // {John: 1, Pete: 2, Mary: 3}
 ```
 
-<hr>
-Use proper array method such that the newArr becomes: 
- {John: 1, Pete: 2, Mary: 3}
- 
-Note: the order doesnot matter here.
-
-Problem Statement: you are expected to use of the array mehtods to create a new object called newArr using the users Array.
-
-the keys of the new object (newArr) would be the name of the user
-and the values would be the id of the user
-
-<hr>
-
 ### Solution:
 
 ```js
@@ -69,4 +56,47 @@ console.log(newArr);
 let obj = {};
 users.map((elem) => (obj[elem.name] = elem.id));
 console.log(obj);
+```
+
+## Problem 3
+
+```js
+let data = [
+  { name: "John", subject: "Javascript" },
+  { name: "John", subject: "HTML" },
+  { name: "John", subject: "CSS" },
+  { name: "Pete", subject: "Java" },
+  { name: "Pete", subject: "English" },
+  { name: "Pete", subject: "Maths" },
+  { name: "Mary", subject: "Rust" },
+  { name: "Mary", subject: "Elm" },
+];
+
+let subjectHash = data.reduce((acc, item) => {
+  /* Write code here */
+}, {});
+
+console.log(subjectHash);
+/*
+Expected output:
+{
+  John: ["Javascript", "HTML", "CSS"],
+  Pete: ["Java", "English", "Maths"],
+  Mary: ["Rust", "Elm"]
+}
+*/
+```
+
+### Solution
+
+```js
+let subjectHash = data.reduce((acc, item) => {
+  /* Write code here */
+  acc[item.name] = acc[item.name]
+    ? [...acc[item.name], item.subject]
+    : [item.subject];
+  return acc;
+}, {});
+
+console.log(subjectHash);
 ```
