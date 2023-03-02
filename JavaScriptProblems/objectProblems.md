@@ -136,6 +136,34 @@ console.log(usersMapped);
 ```
 
 ## Problem 5
+
 ```js
 
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+function getGreeting(firstName, lastName) {
+  return `Hi from ${firstName} ${lastName}.`
+}
+
+let usersGreetings = /* your code here */  ;
+
+console.log(usersGreetings);
+/*
+Expected output:
+["Hi from John Smith.","Hi from Pete Hunt.","Hi from Mary Key."]
+*/
+```
+
+### Solution
+
+```js
+let usersGreetings = users.map((ele) => {
+  return getGreeting(ele.name, ele.surname);
+});
+
+console.log(usersGreetings);
 ```
