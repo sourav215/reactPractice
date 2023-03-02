@@ -6,9 +6,9 @@ let users = [{ age: 16 }, { age: 20 }, { age: 23 }, { age: 30 }];
 // [16, 20, 23, 30]
 
 let newArr =
-  /* Write code */
+  /* Write code */;
 
-  console.log(newArr); // [16, 20, 23, 30];
+console.log(newArr); // [16, 20, 23, 30];
 ```
 
 ### Answer
@@ -18,6 +18,7 @@ let newArr = users.reduce((acc, ele) => {
   acc.push(ele.age);
   return acc;
 }, []);
+
 console.log(newArr);
 ```
 
@@ -37,9 +38,9 @@ let users = [
 
 let obj = {};
 let newArr =
-  /* your code here */
+  /* your code here */;
 
-  console.log(newArr); // {John: 1, Pete: 2, Mary: 3}
+console.log(newArr); // {John: 1, Pete: 2, Mary: 3}
 ```
 
 ### Solution:
@@ -49,12 +50,14 @@ let newArr = users.reduce((acc, ele) => {
   acc[ele.name] = ele.id;
   return acc;
 }, {});
+
 console.log(newArr);
 ```
 
 ```js
 let obj = {};
 users.map((elem) => (obj[elem.name] = elem.id));
+
 console.log(obj);
 ```
 
