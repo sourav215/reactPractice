@@ -72,3 +72,34 @@ class Main{
 }
 
 ```
+
+## Abstraction
+
+```java
+        /* Animal.java */
+
+public abstract class Animal {
+    public abstract void makeSound();
+}
+```
+
+```java
+        /* Cat.java */
+
+public class Cat extends Animal {
+    public void makeSound() {
+        System.out.println("Meeaoo.. meeaoo..");
+    }
+}
+```
+
+```java
+        /* Main.java */
+        
+public class Main{
+    public static void main(String[] args){
+        Cat cat = new Cat();
+        cat.makeSound();
+    }
+}
+```
