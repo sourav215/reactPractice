@@ -144,3 +144,60 @@ public interface Phone {
     }
 }
 ```
+
+## Extend and Implement
+
+```java
+  /* Father.java (Interface) */
+
+public interface Father {
+    public void task();
+}
+```
+
+```java
+  /* Person.java */
+
+public class Person {
+    String name;
+    int age;
+
+    public Person(String n, int a) {
+        this.name = n;
+        this.age = a;
+    }
+
+    public void show_person(){
+        System.out.println(this.name + " is of " + this.age);
+    }
+}
+
+```
+
+```java
+  /* Man.java  */
+
+public class Man extends Person implements Father{
+    int salary;
+    public Man(String n, int a, int s){
+        super(n, a);
+        this.salary = s;
+    }
+    public void task(){
+        System.out.println("Earn money");
+    }
+}
+
+```
+
+```java
+  /* Main.java */
+
+public class Main{
+    public static void main(String[] args){
+        Man sourabh  = new Man("Sourabh", 25, 10000);
+        sourabh.show_person();
+        sourabh.task();
+    }
+}
+```
