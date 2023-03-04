@@ -95,11 +95,52 @@ public class Cat extends Animal {
 
 ```java
         /* Main.java */
-        
+
 public class Main{
     public static void main(String[] args){
         Cat cat = new Cat();
         cat.makeSound();
+    }
+}
+```
+
+## Interface
+
+```java
+  /* Phone.java (Interface) */
+
+public interface Phone {
+    public void color();
+    public void cost();
+    public  void batteryLife();
+}
+```
+
+```java
+  /* Iphone.java (class) */
+
+  public class Iphone implements Phone{
+    public void color(){
+        System.out.println("Black");
+    }
+    public  void cost(){
+        System.out.println(80000);
+    }
+    public void batteryLife(){
+        System.out.println("4000mah");
+    }
+}
+```
+
+```java
+  /* Main.java (class) */
+
+  public class Main{
+    public static void main(String[] args){
+        Iphone iphone = new Iphone();
+        iphone.color();
+        iphone.cost();
+        iphone.batteryLife();
     }
 }
 ```
