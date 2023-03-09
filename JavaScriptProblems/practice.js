@@ -1,24 +1,54 @@
 const data = [
-  { name: 'Superman', favoriteIceCreams: ['Strawberry', 'Vanilla', 'Chocolate', 'Cookies & Cream'] },
-  { name: 'Batman', favoriteIceCreams: ['Cookies & Cream', 'Mint Chocolate Chip', 'Chocolate', 'Vanilla'] },
-  { name: 'Flash', favoriteIceCreams: ['Chocolate', 'Rocky Road', 'Pistachio', 'Banana'] },
-  { name: 'Aquaman', favoriteIceCreams: ['Vanilla', 'Chocolate', 'Mint Chocolate Chip'] },
-  { name: 'Green Lantern', favoriteIceCreams: ['Vanilla', 'French Vanilla', 'Vanilla Bean', 'Strawberry'] },
-  { name: 'Robin', favoriteIceCreams: ['Strawberry', 'Chocolate', 'Mint Chocolate Chip'] }
+  {
+    name: "Superman",
+    favoriteIceCreams: [
+      "Strawberry",
+      "Vanilla",
+      "Chocolate",
+      "Cookies & Cream",
+    ],
+  },
+  {
+    name: "Batman",
+    favoriteIceCreams: [
+      "Cookies & Cream",
+      "Mint Chocolate Chip",
+      "Chocolate",
+      "Vanilla",
+    ],
+  },
+  {
+    name: "Flash",
+    favoriteIceCreams: ["Chocolate", "Rocky Road", "Pistachio", "Banana"],
+  },
+  {
+    name: "Aquaman",
+    favoriteIceCreams: ["Vanilla", "Chocolate", "Mint Chocolate Chip"],
+  },
+  {
+    name: "Green Lantern",
+    favoriteIceCreams: [
+      "Vanilla",
+      "French Vanilla",
+      "Vanilla Bean",
+      "Strawberry",
+    ],
+  },
+  {
+    name: "Robin",
+    favoriteIceCreams: ["Strawberry", "Chocolate", "Mint Chocolate Chip"],
+  },
 ];
 
+const ans = data.reduce((acc, item) => {
+  item.favoriteIceCreams.forEach((elem) => {
+    acc[elem] = acc[elem] ? acc[elem] + 1 : 1;
+  });
 
-const ans = data.reduce((acc,item) => {
+  return acc;
+}, {});
 
-  item.favoriteIceCreams.forEach(elem => {
-    acc[elem] = acc[elem] ? acc[elem] + 1 : 1 
-  })
-  
-  return acc
-},{})
-
-console.log(ans)
-
+console.log(ans);
 
 /*
 {
@@ -34,13 +64,6 @@ console.log(ans)
   'Vanilla Bean': 1
 }
 */
-
-
-
-
-
-
-
 
 // const voters = [
 //   {name:'Bob' , age: 30, voted: true},
@@ -68,11 +91,10 @@ console.log(ans)
 //       if(item.voted) {
 //         acc.numYoungVotes = acc.numYoungVotes ? acc.numYoungVotes + 1 : 1
 //       }
-//     } 
+//     }
 //   return acc
 //   }, {})
 // )
-
 
 // /*
 // { numYoungVotes: 1,
@@ -83,10 +105,6 @@ console.log(ans)
 //   numOldsPeople: 4
 // }
 // */
-
-
-
-
 
 // const wishlist = [
 //   { title: "Tesla Model S", price: 90000 },
@@ -100,9 +118,6 @@ console.log(ans)
 
 // Given an array of all your wishlist items, figure out how much it would cost to just buy everything at once: 227005
 
-
-
-
 // let prateekMarksData = {
 //   name: "Prateek",
 //   subject1: "Javascript",
@@ -110,7 +125,7 @@ console.log(ans)
 //   subject3: "CSS",
 //   subject4: null,
 //   subject5: null,
-//   marks1: 90, 
+//   marks1: 90,
 //   marks2: 81,
 //   marks3: 80,
 //   marks4: null,
@@ -124,7 +139,7 @@ console.log(ans)
 //   subject3: null,
 //   subject4: null,
 //   subject5: null,
-//   marks1: 95, 
+//   marks1: 95,
 //   marks2: 85,
 //   marks3: null,
 //   marks4: null,
@@ -138,33 +153,30 @@ console.log(ans)
 
 //   object.name = item.name;
 //   let arr = [];
-  
+
 //   for(let i = 1; i < 6; i++) {
 //       if(item[`subject${i}`]){
 //         object.marks = object.marks ? [...object.marks, {  subject: item[`subject${i}`], score : item[`marks${i}`]   } ] : [ { subject: item[`subject${i}`], score : item[`marks${i}`]   }  ];
 
 //         console.log({ subject: item[`subject${i}`], score : item[`marks${i}`]   })
-        
+
 //       }
 //   }
 
 //   acc.push(object)
-  
+
 //   return acc
 // },[])
-
-
-
 
 // console.log(massagedData);
 
 // /*
 //  ------------------------------------------------
-//  massage the `allStudentsMarksData` to get a new 
+//  massage the `allStudentsMarksData` to get a new
 //  array called `massagedData`
 
 //  Instead of separate enties for 5 subjects and their marks,
-//  in the new array, we just have one entry called marks. 
+//  in the new array, we just have one entry called marks.
 //  marks is an array of objects. the objects of marks
 //  contains subject and score.
 //  ------------------------------------------------
@@ -173,7 +185,7 @@ console.log(ans)
 
 //   [
 //      {
-//        name: "Prateek", 
+//        name: "Prateek",
 //        marks: [
 //          {subject: 'Javascript', score: 90},
 //          {subject: 'HTML', score: 81},
@@ -181,7 +193,7 @@ console.log(ans)
 //        ]
 //      },
 //      {
-//        name: "Nrupul", 
+//        name: "Nrupul",
 //        marks: [
 //          {subject: 'Java', score: 95},
 //          {subject: 'Python', score: 85}
@@ -191,53 +203,28 @@ console.log(ans)
 //   ]
 
 // */
+let massagedData = allStudentsMarksData.map((ele) => {
+  
+  let obj = {};
+  obj.name = ele.name;
 
-
-// let subjectsHash = {
-//   1: 'Javascript',
-//   2: 'HTML',
-//   3: 'CSS',
-//   4: 'Java',
-//   5: 'Rust',
-// }
-
-// let students = [
-//   {id: 1, name: 'Prateek', subjectID: 5},
-//   {id: 2, name: 'Yogesh', subjectID: 2},
-//   {id: 3, name: 'Nrupul', subjectID: 4},
-//   {id: 4, name: 'Prateek', subjectID: 1},
-// ]
-
-// let newObj = students.reduce((acc,student) => {
-//   (acc[student.name] = acc[student.name] ? [ ...acc[student.name], subjectsHash[student.subjectID] ] : [ subjectsHash[student.subjectID] ] );
-// return acc                                              }, {}) /* your code here */
-
-// console.log(newObj);
-
-// /* 
-// ----------------------------------
-// create a new object called `newObj` using the `students` array &  
-// the `subjectsHash` object.
-// ----------------------------------
-
-// Expected Output of `newObj`: 
-// {
-//   Prateek: ["Rust", "Javascript"],
-//   Yogesh: ["HTML"],
-//   Nrupul: ["Java"],
-// }
-// */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  for (let i = 0; i < 6; i++) {
+    if (ele[`subject${i}`]) {
+      obj.marks = obj.marks
+        ? [
+            ...obj.marks,
+            {
+              subject: ele[`subject${i}`],
+              score: ele[`score${i}`],
+            },
+          ]
+        : [
+            {
+              subject: ele[`subject${i}`],
+              score: ele[`score${i}`],
+            },
+          ];
+    }
+  }
+  return obj;
+});
