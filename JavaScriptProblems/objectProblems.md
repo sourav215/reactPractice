@@ -170,3 +170,47 @@ let usersGreetings = users.map((ele) => {
 
 console.log(usersGreetings);
 ```
+
+## Problem 6
+
+```js
+let subjectsHash = {
+  1: "Javascript",
+  2: "HTML",
+  3: "CSS",
+  4: "Java",
+  5: "Rust",
+};
+
+let students = [
+  { id: 1, name: "Prateek", subjectID: 5 },
+  { id: 2, name: "Yogesh", subjectID: 2 },
+  { id: 3, name: "Nrupul", subjectID: 4 },
+  { id: 4, name: "Prateek", subjectID: 1 },
+];
+let newObj =
+  /* Write your code */
+  /*
+create a new object called `newObj` using the `students` array & the `subjectsHash` object.
+*/
+  console.log(newObj);
+/* 
+Expected Output of `newObj`: 
+{
+  Prateek: ["Rust", "Javascript"],
+  Yogesh: ["HTML"],
+  Nrupul: ["Java"],
+}
+*/
+```
+### Solution
+```js
+let newObj = students.reduce((acc, ele) =>{
+    acc[ele.name] = acc[ele.name] 
+        ? [...acc[ele.name],subjectsHash[ele.subjectID] ]
+        : [subjectsHash[ele.subjectID]];
+        
+    return acc;
+},{})
+console.log(newObj);
+```
