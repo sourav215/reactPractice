@@ -281,7 +281,6 @@ let massagedData =
 ### Solution
 
 ```js
-
 let massagedData = allStudentsMarksData.map((ele) => {
   let obj = {};
   obj.name = ele.name;
@@ -306,5 +305,61 @@ let massagedData = allStudentsMarksData.map((ele) => {
   }
   return obj;
 });
+```
 
+## Problem 7
+
+```js
+const voters = [
+  { name: "Bob", age: 30, voted: true },
+  { name: "Jake", age: 32, voted: true },
+  { name: "Kate", age: 25, voted: false },
+  { name: "Sam", age: 20, voted: false },
+  { name: "Phil", age: 21, voted: true },
+  { name: "Ed", age: 55, voted: true },
+  { name: "Tami", age: 54, voted: true },
+  { name: "Mary", age: 31, voted: false },
+  { name: "Becky", age: 43, voted: false },
+  { name: "Joey", age: 41, voted: true },
+  { name: "Jeff", age: 30, voted: true },
+  { name: "Zack", age: 19, voted: true },
+];
+
+/*
+young -> [0,20]
+mids -> [21,40]
+old -> [40,Infinity]
+*/
+let report = voters.reduce((acc, ele) => {
+  /* Write your code */
+}, {});
+
+console.log(report);
+/* 
+Expected Output
+
+{ numYoungVotes: 1,
+  numYoungPeople: 4,
+  numMidVotesPeople: 3,
+  numMidsPeople: 4,
+  numOldVotesPeople: 3,
+  numOldsPeople: 4
+}
+*/
+```
+
+### Solution
+
+```js
+const report = voters.reduce((acc, ele) => {
+  if (ele.age < 21) {
+    acc.numYoungPeople = acc.numYoungPeople ? acc.numYoungPeople + 1 : 1;
+    acc.numYoungVotes = acc.numYoungVotes ? acc.numYoungVotes + 1 : 1;
+  } else if (ele.age >= 21 && ele.age <= 39) {
+    acc.numMidsPeople = acc.numMidsPeople ? acc.numMidsPeople + 1 : 1;
+    acc.numMidVotes = acc.numMidVotes ? acc.numMidVotes + 1 : 1;
+  }
+  return acc;
+}, {});
+console.log(report);
 ```
