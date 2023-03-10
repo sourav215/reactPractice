@@ -1,18 +1,8 @@
-let promise = new Promise((resolve, reject) => {
-  setTimeout(()=>{
-    let flag = true;
-    if(flag){
-      resolve("sdfjsl;jfd");
-    }else{
-      reject("failed");
-    }
-  }, 8000)
-})
+function foo() {
+  let x = (y = 0);
+  x++;
+  y++;
+  return x;
+}
 
-promise.then((res) => {
-  console.log(res);
-  console.dir(promise);
-})
-.catch((err) => console.log(err));
-
-console.dir(promise);
+console.log(foo(), typeof x, typeof y);
