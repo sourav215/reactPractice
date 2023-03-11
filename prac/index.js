@@ -5,4 +5,4 @@ function foo() {
   return x;
 }
 
-console.log(foo(), typeof x, typeof y);
+console.log(foo(),  y);
