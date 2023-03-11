@@ -496,6 +496,7 @@ Overall, load balancing is a critical component of modern computing systems, hel
 ## What are webhooks?
 
 ## What is Docker? Why do we use it?
+
 Docker is an open-source containerization platform that allows you to develop, deploy, and run applications in containers. A container is a lightweight and portable software package that includes everything needed to run an application, including the code, dependencies, libraries, and system tools, in a single package.
 
 ## What is S3 Service in AWS?
@@ -509,3 +510,121 @@ Docker is an open-source containerization platform that allows you to develop, d
 ## What are ELBs in AWS?
 
 ## What is a reverse proxy
+
+## What are some features of MongoDB?
+
+MongoDB is a popular NoSQL database that offers many features that make it well-suited for modern web and mobile applications. Here are some key features of MongoDB:
+
+Document-oriented: MongoDB is a document-oriented database, which means it stores data in flexible, JSON-like documents. This makes it easy to work with data in a more natural way and enables developers to quickly iterate on their data models.
+
+Schema-less: MongoDB is schema-less, which means you can change the structure of your documents at any time without having to modify the database schema. This makes it easy to handle evolving data models and avoid costly downtime.
+
+High scalability: MongoDB is highly scalable, allowing you to easily scale out your database by adding more nodes to your cluster. This makes it easy to handle large volumes of data and high traffic loads.
+
+High availability: MongoDB supports automatic failover, meaning it can automatically switch to a secondary node in the event of a primary node failure. This helps ensure high availability and minimize downtime.
+
+Indexing: MongoDB provides flexible indexing options to help you optimize your database performance. You can create indexes on any field in your documents, and MongoDB automatically indexes all fields by default.
+
+Querying: MongoDB supports a rich query language that allows you to perform complex queries on your data. You can perform queries that combine multiple criteria, perform text searches, and perform geospatial queries.
+
+Aggregation: MongoDB supports aggregation pipelines, which allow you to perform complex data transformations on your data. You can use aggregation pipelines to group, filter, sort, and perform other operations on your data.
+
+Overall, MongoDB is a powerful NoSQL database that offers many features that make it well-suited for modern web and mobile applications.
+
+## What are aggregate queries?
+
+Aggregate queries are a powerful feature of MongoDB that allow you to perform complex data analysis and transformation operations on your data. An aggregate query groups, filters, and manipulates data to return a result set that meets specific criteria. The result set can be used for reporting, analytics, and data visualization.
+
+Aggregate queries use a pipeline of stages, where each stage performs a specific operation on the data. The output of one stage becomes the input of the next stage. MongoDB provides a rich set of aggregation pipeline stages, including:
+
+$match - Filters documents based on specified criteria.
+
+$group - Groups documents by a specified field and calculates aggregate values.
+
+$sort - Sorts documents based on specified criteria.
+
+$project - Selects specific fields from documents and transforms the output.
+
+$limit - Limits the number of documents returned by the query.
+
+$skip - Skips a specified number of documents in the result set.
+
+$unwind - Expands arrays in documents into multiple documents.
+
+$lookup - Performs a left outer join on another collection.
+
+By combining these stages, you can perform complex data analysis and transformation operations on your data. For example, you can use aggregate queries to:
+
+Calculate the average, minimum, or maximum value of a field across all documents in a collection.
+
+Group documents by a specified field and calculate aggregate values for each group.
+
+Filter documents based on complex criteria that cannot be expressed using simple query operators.
+
+Join data from multiple collections and perform complex data transformations.
+
+Overall, aggregate queries provide a powerful tool for analyzing and transforming data in MongoDB.
+
+## What are pipelines in aggregation?
+
+In MongoDB, an aggregation pipeline is a framework for processing and transforming documents in a collection. A pipeline is a sequence of stages, where each stage performs a specific operation on the documents in the pipeline. The output of one stage becomes the input of the next stage, and the final output of the pipeline is the result of the last stage.
+
+## How do you do aggregate queries?
+
+To perform an aggregate query in MongoDB, you can use the aggregate() method on a collection. The aggregate() method takes an array of pipeline stages as its argument, where each stage represents a specific operation to be performed on the documents in the collection.
+
+Here's an example of how to perform an aggregate query to calculate the average age of all users in a users collection:
+
+```js
+db.users.aggregate([{ $group: { _id: null, avgAge: { $avg: "$age" } } }]);
+```
+
+This pipeline consists of a single stage, which is a $group stage that groups all documents in the collection by null, meaning there is only one group. The $avg operator calculates the average age of all documents in the collection for the age field, and the result of the stage is an object with \_id set to null and avgAge set to the average age.
+
+Here's another example that shows how to perform an aggregate query to group users by their gender and calculate the average age for each gender:
+
+This pipeline consists of a single $group stage that groups all documents in the collection by the gender field. The $avg operator calculates the average age for each group, and the result of the stage is an object for each group with \_id set to the gender value and avgAge set to the average age.
+
+These are just a few examples of how to use the aggregation pipeline to perform complex data analysis and transformation operations on your data in MongoDB. By combining different stages in different ways, you can create custom pipelines that meet your specific data analysis needs.
+
+## How can you group by a particular value in MongoDB?
+
+## How can you paginate on MongoDB?
+
+## How can you sort in MongoDB?
+
+## What is indexing in MongoDB? Why do we need to use indexing? What are pros and cons for indexing?
+
+## Write the query for indexing a field in MongoDB?
+
+## What is the improvement in performance in MongoDB?
+
+## What is the data structure used for indexing?
+
+## Are values sorted in indexes?
+
+## What are Replica Sets in MongoDB?
+
+## Explain the structure of ObjectID in MongoDB.
+
+## By default, which index is created by MongoDB for every collection?
+
+## In which format MongoDB represents document structure?
+
+## What is the limitation of a document in MongoDB?
+
+## What is the difference between MongoDB and Redis database?
+
+## How can you add references between multiple collections?
+
+## What are lookup in aggregation for MongoDB?
+
+## What are graph lookups?
+
+## What is the alternative for lookups for SQL?
+
+## How can you do one to many relation in MongoDB?
+
+## How can you do many to many relation in MongoDB?
+
+## How can you do one to zillion relation in MongoDB?
