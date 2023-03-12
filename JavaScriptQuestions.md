@@ -82,13 +82,23 @@ Example - 2
 ```js
 // Find Min element
 let arr = [4, 10, 5, 9, 2, 7];
-
+// let min = Math.min(...arr);
 let min = Math.min.apply(Math, arr);
 console.log(min);
 ```
 
-### What is Promise and Explain Promise
+Example - 3
 
+```js
+// Concatenate array
+let arr1 = [1, 2, 3, 4];
+let arr2 = [5, 6, 7];
+// arr1.push(...arr2);
+arr1.push.apply(arr1, arr2);
+console.log(arr1);
+```
+
+### What is Promise and Explain Promise
 
 ### What is Promise Chain
 
@@ -169,7 +179,8 @@ add2();
 The fetch() method in JavaScript is used to request data from a server. The request can be of any type of API that returns the data in JSON or XML. The fetch() method requires one parameter, the URL to request, and returns a `promise`.
 
 ## Why we need to handle then() two times in fetch
-To convert stream 
+
+To convert stream
 
 ## What is OOPs and Explain its Features
 
@@ -196,8 +207,6 @@ The rest parameter is an improved way to handle function parameters, allowing us
 ### Explain diff btween Event Bubbling and Event Capturing
 
 ### How can we restrict Event Bubbling and Event Capturng behaviour
-
-
 
 ### What is diff between normal function and arrow function
 
