@@ -117,7 +117,7 @@ console.log(arr1);
 
 In other words,
 
-- closure is a `function instance` remembering its outer variables even after the outer function has executed.
+- closure is the combination of `function instance` remembering its outer variables even after the outer function has executed.
 
 ### Advantages of closures
 
