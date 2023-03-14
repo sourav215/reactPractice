@@ -1,14 +1,15 @@
-Array.prototype.svReduce = function (cb, init) {
-  let acc = init ? init : this[0];
+Function.prototype.svcall = function(context={}, ...args){
+   context.fun = this;
+   context.fun(...args);
+}
 
-  for (let i = init ? 0 : 1; i < this.length; i++) {
-    acc = cb(acc, this[i], i, this);
-  }
-  return acc;
-};
+let obj = {
+  name: "sourav",
+  age: 25
+}
 
-let arr = [5, 2, 3, 4];
-let newArr = arr.svReduce((acc, ele) => {
-  return acc + ele;
-});
-console.log(newArr);
+function showDetails(){
+  console.log(this.name, this.age);
+}
+
+showDetails.svcall(obj);

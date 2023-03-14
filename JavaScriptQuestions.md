@@ -47,6 +47,11 @@ ex - Object , Array , RegExp
 
 ## What is DOM and DOM Manipulation
 
+## What is `this` keyword in JS?
+
+- `this` keyword refers to an object.
+- `this` keyword is used to `reuse` any function in different contexts.
+
 ## What are call() apply() bind()
 
 - Predefined JavaScript methods.
