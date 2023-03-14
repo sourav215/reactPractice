@@ -520,7 +520,7 @@ const myThrottle = (callback, delay) => {
       return;
     }
     prev = curr;
-    return callback(...args);
+    callback(...args);
   };
 };
 
