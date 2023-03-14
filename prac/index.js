@@ -1,17 +1,21 @@
-Function.prototype.svapply = function(context={}, args=[]){
-   context.fun = this;
-   context.fun(...args);
+const myThrottle = (callback, delay) => {
+  let prev = 0;
+  return function (...args) {
+    let curr = Date.now();
+    if (curr - prev < delay) {
+      return;
+    }
+    prev = curr;
+    return callback(...args);
+  };
+};
+
+function sum(a, b) {
+  console.log(a + b);
 }
-
-
-
-let obj = {
-  name: "sourav",
-  age: 25
-}
-
-function showDetails(a, b){
-  console.log(this.name, this.age, a, b);
-}
-
-showDetails.svapply(obj, [2,3]);
+const throttle = myThrottle(() => {
+  sum(2, 3);
+}, 1000);
+throttle();
+throttle();
+throttle();

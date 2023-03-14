@@ -492,8 +492,12 @@ const myDebounce = (callback, delay) => {
   };
 };
 
+function sum(a, b) {
+  console.log(a + b);
+}
+
 const debounce = myDebounce(() => {
-  console.log("req send ..");
+  sum(2, 3);
 }, 1000);
 debounce();
 debounce();
@@ -511,7 +515,7 @@ Example - 1 (Throttle Polyfill)
 const myThrottle = (callback, delay) => {
   let prev = 0;
   return function (...args) {
-    let curr = new Date().getTime();
+    let curr = Date.now();
     if (curr - prev < delay) {
       return;
     }
@@ -520,8 +524,11 @@ const myThrottle = (callback, delay) => {
   };
 };
 
+function sum(a, b) {
+  console.log(a + b);
+}
 const throttle = myThrottle(() => {
-  console.log("req send ..");
+  sum(2, 3);
 }, 1000);
 throttle();
 throttle();
