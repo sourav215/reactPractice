@@ -1,15 +1,17 @@
-Function.prototype.svcall = function(context={}, ...args){
+Function.prototype.svapply = function(context={}, args=[]){
    context.fun = this;
    context.fun(...args);
 }
+
+
 
 let obj = {
   name: "sourav",
   age: 25
 }
 
-function showDetails(){
-  console.log(this.name, this.age);
+function showDetails(a, b){
+  console.log(this.name, this.age, a, b);
 }
 
-showDetails.svcall(obj);
+showDetails.svapply(obj, [2,3]);

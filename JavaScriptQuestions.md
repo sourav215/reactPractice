@@ -105,15 +105,31 @@ console.log(arr1);
 
 ### What is Promise and Explain Promise
 
-### What is Promise Chain
+- Promise is an object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+- Promises are used to handle asynchronous operations.
+- Used to overcome two things
+  1.  Callback Hell
+  2.  Inversion of Control
+- Promise Object has two things
 
-### Drawback of Callbacks and what is callback chain
+  1.  Promise State
+  2.  Promise Result
 
-### What is aync await
-
-### In how many ways we can handle Promise
+- Promise has 3 States
+  1.  Pending
+  2.  Fulfilled
+  3.  Rejected
 
 ### Why do we need Promise
+
+1. Improves Code Readability
+2. Better Handling of Async functions
+3. Better flow control
+4. Better Error Handling
+
+### What is Promise Chain
+
+The process of executing a sequence of asynchronous tasks one after another using promises known as Promise Chain.
 
 ### Explain Clousers, Why do we need it
 
