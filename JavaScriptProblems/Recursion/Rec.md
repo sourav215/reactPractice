@@ -52,3 +52,17 @@ function getFlatArray(arr) {
 const newArr = getFlatArray(myarr);
 console.log(newArr);
 ```
+
+## Problem 2
+
+Reverse a String
+
+```js
+let str = "sourav";
+function reverseStr(str) {
+  // return str.split("").reverse().join("");
+  return [...str].reduce((acc, ele) => ele + acc, "");
+}
+
+console.log(reverseStr(str));
+```
