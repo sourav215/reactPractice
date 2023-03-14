@@ -103,7 +103,7 @@ arr1.push.apply(arr1, arr2);
 console.log(arr1);
 ```
 
-### What is Promise and Explain Promise
+## What is Promise and Explain Promise
 
 - Promise is an object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 - Promises are used to handle asynchronous operations.
@@ -120,16 +120,56 @@ console.log(arr1);
   2.  Fulfilled
   3.  Rejected
 
-### Why do we need Promise
+## Why do we need Promise
 
 1. Improves Code Readability
 2. Better Handling of Async functions
 3. Better flow control
 4. Better Error Handling
 
-### What is Promise Chain
+## What is Promise Chain
 
 The process of executing a sequence of asynchronous tasks one after another using promises known as Promise Chain.
+
+## What are Promise Combinators
+
+- Helps us to execute more than one at one time and then return the result accordingly.
+
+There are 4 types of combinators -
+
+- Promise.all([ , , ,]) :
+
+```
+- run all the promises in parallel
+- return an `result array` with all of the `fulfiled` promises
+- if any of them failed all the promises `failed`.
+
+```
+
+- Promise.race([ , , ,]):
+
+```
+- run all the promises in parallel
+- returns the first promise `fulfiled` or `rejected`.
+```
+
+- Promise.allSettled
+
+```
+
+- run all the promises in parallel
+- return an `array` with all of the `fulfiled` as well as `rejected` promises
+- if any of them fails return only the `settled promises`.
+
+```
+
+1. Promise.any
+
+```
+- run all the promises in parallel
+- returns the first `fulfiled` promise.
+
+```
 
 ### Explain Clousers, Why do we need it
 
