@@ -1,6 +1,75 @@
 ## Problem 1
 
 ```js
+let arr = ["a", "a", "b", "c", "c"];
+
+/*
+Expected Output
+{ 
+  a: 2,
+  b: 1,
+  c: 2 
+}
+*/
+```
+
+### Solution
+
+```js
+let res = arr.reduce((acc, ele) => {
+  acc[ele] = acc[ele] ? acc[ele] + 1 : 1;
+  return acc;
+}, {});
+console.log(res);
+```
+
+## Problem 2
+
+```js
+let arr = [
+  {
+    first: "John",
+    last: "Doe",
+    dept: "FE",
+    commits: 10,
+  },
+  {
+    first: "Jane",
+    last: "Doe",
+    dept: "BE",
+    commits: 15,
+  },
+  {
+    first: "James",
+    last: "bond",
+    dept: "BE",
+    commits: 8,
+  },
+];
+
+/*
+Expected Output
+    {
+      BE: ["Jane", "James"]
+      FE: ["John"]
+    }
+*/
+```
+
+### Solution
+
+```js
+let obj = arr.reduce((acc, ele) => {
+  acc[ele.dept] = [...(acc[ele.dept] || []), ele.first];
+  //   acc[ele.dept]=  acc[ele.dept] ? [... acc[ele.dept],ele.first] : [ele.first];
+  return acc;
+}, {});
+console.log(obj);
+```
+
+## Problem 3
+
+```js
 let users = [{ age: 16 }, { age: 20 }, { age: 23 }, { age: 30 }];
 
 // [16, 20, 23, 30]
@@ -27,7 +96,7 @@ let newArr = users.map((ele) => ele.age);
 console.log(newArr);
 ```
 
-## Problem 2
+## Problem 4
 
 ```js
 let users = [
@@ -61,7 +130,7 @@ users.map((elem) => (obj[elem.name] = elem.id));
 console.log(obj);
 ```
 
-## Problem 3
+## Problem 5
 
 ```js
 let data = [
@@ -104,7 +173,7 @@ let subjectHash = data.reduce((acc, item) => {
 console.log(subjectHash);
 ```
 
-## Problem 4
+## Problem 6
 
 ```js
 let john = { name: "John", surname: "Smith", id: 1 };
@@ -138,7 +207,7 @@ let usersMapped = users.map((ele) => {
 console.log(usersMapped);
 ```
 
-## Problem 5
+## Problem 7
 
 ```js
 
@@ -171,7 +240,7 @@ let usersGreetings = users.map((ele) => {
 console.log(usersGreetings);
 ```
 
-## Problem 6
+## Problem 8
 
 ```js
 let subjectsHash = {
@@ -217,7 +286,7 @@ let newObj = students.reduce((acc, ele) => {
 console.log(newObj);
 ```
 
-## Problem 6
+## Problem 9
 
 ```js
 let prateekMarksData = {
@@ -307,7 +376,7 @@ let massagedData = allStudentsMarksData.map((ele) => {
 });
 ```
 
-## Problem 7
+## Problem 10
 
 ```js
 const voters = [
@@ -364,7 +433,7 @@ const report = voters.reduce((acc, ele) => {
 console.log(report);
 ```
 
-## Problem 8
+## Problem 11
 
 ```js
 const data = [
