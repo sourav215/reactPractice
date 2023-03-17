@@ -14,7 +14,7 @@ Node.js, on the other hand, uses an event-driven, non-blocking I/O model. This m
 
 In summary, Node.js is non-blocking because it uses an event-driven I/O model, which enables it to execute multiple requests concurrently and efficiently handle I/O operations without blocking the execution of other processes.
 
-## ## What is throughput?
+## What is throughput?
 
 Throughput is used to measure the amount of data that can be processed or transmitted by a system in a given period of time. For example, in a network, throughput may refer to the number of data packets that can be transmitted per second or the amount of data that can be downloaded from the internet in a given time frame.
 
@@ -26,7 +26,7 @@ Traditional web servers, such as Apache, use a process-based or thread-based mod
 
 Node.js, on the other hand, uses an event-driven, non-blocking I/O model, which allows it to handle multiple concurrent connections efficiently. Node.js operates on a single thread, and all I/O operations are handled asynchronously using callback functions. When an I/O operation is initiated, the function does not block the thread and instead registers a callback function to be called once the operation is complete. In the meantime, the thread can continue handling other requests.
 
-## ## What are CPU intensive tasks?
+## What are CPU intensive tasks?
 
 CPU intensive tasks are those that require a significant amount of processing power from the CPU. In Node.js, CPU intensive tasks can include:
 
@@ -46,7 +46,7 @@ When performing CPU intensive tasks in Node.js, it's important to keep in mind t
 
 To avoid blocking the main thread in Node.js, it's important to use asynchronous programming techniques and to offload heavy computations and I/O operations to worker threads or child processes. Additionally, you can use libraries that are optimized for asynchronous programming and non-blocking I/O operations, such as the built-in fs module, which provides asynchronous versions of file system operations, or external libraries such as async or bluebird.
 
-## ## What is the event loop?
+## What is the event loop?
 
 The event loop is a fundamental concept in Node.js that allows it to handle I/O operations and concurrency efficiently. The event loop is responsible for managing the asynchronous execution of code in Node.js.
 
@@ -54,7 +54,7 @@ In Node.js, all I/O operations are non-blocking and asynchronous, which means th
 
 The event loop works by continuously checking for pending tasks in the event queue. When a task is completed, its corresponding callback function is added to the event queue, and the event loop executes it as soon as possible.
 
-## ## What are different phases in event loop?
+##  What are different phases in event loop?
 
 The event loop has several phases:
 
@@ -68,7 +68,7 @@ The event loop has several phases:
 
 By following this cycle, the event loop ensures that Node.js can handle large numbers of concurrent connections efficiently, without creating new threads or processes for each request. This makes Node.js well-suited for building scalable network applications.
 
-## ## What is process.tick?
+## What is process.tick?
 
 `process.nextTick()` is a method in Node.js that allows you to schedule a callback function to be executed on the next iteration of the event loop.
 
@@ -135,7 +135,7 @@ emitter.on("myEvent", () => {
 emitter.emit("myEvent");
 ```
 
-## ## What are clusters?
+## What are clusters?
 
 In Node.js, clusters are a way to take advantage of multi-core systems by creating child processes that run in parallel and share the workload of a single Node.js instance. A cluster is a group of Node.js processes that share the same server port and handle incoming requests.
 
@@ -192,7 +192,7 @@ Handling scale in Node.js applications involves ensuring that your application c
 
 By using these strategies, you can ensure that your Node.js application can handle increasing levels of traffic and requests, and scale smoothly as your application grows.
 
-## ## What is the difference between readFile and readFileSync?
+## What is the difference between readFile and readFileSync?
 
 In Node.js, readFile and readFileSync are two methods for reading files. The main difference between them is that readFile is asynchronous and readFileSync is synchronous.
 
@@ -209,7 +209,7 @@ fs.readFile("myfile.txt", (err, data) => {
 });
 ```
 
-## ## What are CORS? How do you configure them? Why do you need them?
+## What are CORS? How do you configure them? Why do you need them?
 
 CORS stands for Cross-Origin Resource Sharing. It is a security mechanism that restricts web pages from making requests to a different domain than the one that served the web page.
 
@@ -245,7 +245,7 @@ The cors middleware can be configured to allow all origins, specific origins, or
 
 CORS is necessary to prevent malicious websites from accessing sensitive data from other websites. By restricting cross-origin requests, it provides an extra layer of security and protects users' data. However, it can also be a hindrance for legitimate web applications that need to make cross-origin requests. In these cases, configuring CORS properly can allow legitimate cross-origin requests to be made while maintaining security.
 
-## ## What is rate limiting?
+## What is rate limiting?
 
 Rate limiting in Node.js is a technique used to control the rate at which incoming requests are processed. It is used to prevent a single client or a group of clients from overwhelming a server with too many requests.
 
@@ -282,7 +282,7 @@ The key differences between encryption and hashing are:
 
 In summary, encryption and hashing are both important techniques for securing and protecting data, but they serve different purposes and operate differently. Encryption is used to protect data during transmission or storage, while hashing is used to verify the integrity of data or passwords.
 
-## ## What is the difference between https and http?
+## What is the difference between https and http?
 
 HTTP and HTTPS are both protocols used for sending and receiving data over the internet. However, there are some important differences between the two:
 
@@ -296,7 +296,7 @@ Certificate: In order to use HTTPS, a website must have an SSL/TLS certificate. 
 
 In summary, HTTPS is a more secure protocol than HTTP because it uses SSL/TLS encryption to protect data in transit. HTTPS also requires an SSL/TLS certificate, which verifies the identity of the website and is issued by a trusted CA. When it comes to ports and URLs, HTTP typically uses port 80 and starts with "http://", while HTTPS typically uses port 443 and starts with "https://".
 
-## ## What is TLS?
+## What is TLS?
 
 TLS (Transport Layer Security) is a cryptographic protocol that provides security and privacy for data transmitted over the internet. It is the successor to SSL (Secure Sockets Layer) and is used to secure various types of communication, including email, web browsing, messaging, and voice over IP.
 
@@ -389,7 +389,7 @@ It is important to ensure that the salt is kept secret and cannot be easily acce
 
 In general, the salt should be treated as a secret key, just like a password, and should be protected accordingly. Storing the salt securely helps prevent attackers from using precomputed tables to crack passwords, and helps ensure the security of user accounts.
 
-## ## What is the difference between authorisation and Authentication?
+## What is the difference between authorisation and Authentication?
 
 Authentication and authorization are two distinct but related concepts in computer security.
 
