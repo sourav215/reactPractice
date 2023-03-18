@@ -265,7 +265,9 @@ Implementing rate limiting can help improve the performance and reliability of y
 
 In Express, middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. Middleware functions can execute any code, modify the request and response objects, and end the request-response cycle by sending a response to the client or calling the next middleware function.
 
-## ## What is the difference between Encryption and Hashing?
+##  What is the difference between Encryption and Hashing?
+
+https://www.youtube.com/watch?v=jmtzX-NPFDc
 
 Encryption and hashing are two different techniques used to secure and protect data, but they serve different purposes and operate differently.
 
