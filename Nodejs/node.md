@@ -54,7 +54,7 @@ In Node.js, all I/O operations are non-blocking and asynchronous, which means th
 
 The event loop works by continuously checking for pending tasks in the event queue. When a task is completed, its corresponding callback function is added to the event queue, and the event loop executes it as soon as possible.
 
-##  What are different phases in event loop?
+## What are different phases in event loop?
 
 The event loop has several phases:
 
@@ -349,6 +349,9 @@ Token revocation: JWT tokens cannot be easily revoked once they are issued. Ther
 In summary, JWT is a standard for securely transmitting information between parties as a JSON object. JWT tokens can be used as a means of authentication and authorization in web applications. Some of the benefits of using JWT include being stateless, cross-domain, and decentralized, while some potential drawbacks include token size, security, and token revocation.
 
 ## ## What is salting?
+
+- Salting is the process of adding a random keyword to the end of the input.
+- Random keyword added is called salt/ salt value.
 
 Salting is a technique used to increase the security of password storage. It involves adding a random string of characters, called a salt, to the password before it is hashed. The resulting hash is then stored in a database or other storage medium.
 
