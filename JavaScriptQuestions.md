@@ -159,7 +159,7 @@ There are 4 types of combinators -
 
 - run all the promises in parallel
 - return an `array` with all of the `fulfiled` as well as `rejected` promises
-- if any of them fails return only the `settled promises`.
+- if any of them fails return `fulfiled` as well as `rejected` promises.
 
 ```
 
