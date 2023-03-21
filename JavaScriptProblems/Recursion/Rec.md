@@ -82,6 +82,11 @@ Expected Output
 ```js
 let arr = str.split(",");
 
+// const recUsingArrow = (array, index = 0) =>
+//   index === array.length
+//     ? {}
+//     : { [array[index]]: recUsingArrow(array, index + 1) };
+
 function rec(array, index) {
   if (index === array.length) return {};
 
@@ -141,4 +146,99 @@ function getVal(obj, path) {
 }
 
 console.log(getVal(obj, "a.b.c"));
+```
+
+## Flatten object
+
+```js
+const person = {
+  name: "John",
+  address: {
+    personal: {
+      city: "Kolkata",
+      pincode: 700001,
+      id: {
+        pan: 927349,
+        adhaar: 9723923,
+      },
+    },
+  },
+};
+
+/*
+Expected Output
+{
+  name: 'John',
+  city: 'Kolkata',
+  pincode: 700001,
+  pan: 927349,
+  adhaar: 9723923
+}
+*/
+```
+
+### Solution
+
+```js
+let res = {};
+
+function flattenObj(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] === "object") {
+      flattenObj(obj[key]);
+    } else {
+      res[key] = obj[key];
+    }
+  }
+}
+flattenObj(person);
+console.log(res);
+```
+
+## Flaten Object 2
+
+```js
+const person = {
+  name: "John",
+  address: {
+    personal: {
+      city: "Kolkata",
+      pincode: 700001,
+      id: {
+        pan: 927349,
+        adhaar: 9723923,
+      },
+    },
+  },
+};
+
+/*
+Expected Output
+{
+  person_name: 'John',
+  person_address_personal_city: 'Kolkata',
+  person_address_personal_pincode: 700001,
+  person_address_personal_id_pan: 927349,
+  person_address_personal_id_adhaar: 9723923
+}
+
+*/
+```
+
+### Solution
+
+```js
+let res = {};
+
+function flattenObj(obj, name) {
+  for (let key in obj) {
+    if (typeof obj[key] == "object") {
+      flattenObj(obj[key], name + "_" + key);
+    } else {
+      res[name + "_" + key] = obj[key];
+    }
+  }
+}
+flattenObj(person, "person");
+console.log(res);
 ```
