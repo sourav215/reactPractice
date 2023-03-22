@@ -38,7 +38,7 @@ console.log(newArr);
 
 ```js
 function getFlatArray(arr) {
-  narr = arr.reduce((acc, ele) => {
+  return arr.reduce((acc, ele) => {
     if (Array.isArray(ele)) {
       acc = [...acc, ...getFlatArray(ele)];
     } else {
@@ -46,7 +46,7 @@ function getFlatArray(arr) {
     }
     return acc;
   }, []);
-  return narr;
+  
 }
 
 const newArr = getFlatArray(myarr);
