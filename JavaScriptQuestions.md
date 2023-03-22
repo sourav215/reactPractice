@@ -41,6 +41,22 @@ ex - Object , Array , RegExp
 
 ## Diff between slice and splice
 
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango", "Cherry", "lsj"];
+
+let newArr = fruits.slice(1, 4);
+/*
+[ 'Orange', 'Apple', 'Mango' ]
+[ 'Banana', 'Orange', 'Apple', 'Mango', 'Cherry', 'lsj' ]
+*/
+
+let newArr =fruits.splice(1,4);
+/*
+ [ 'Orange', 'Apple', 'Mango', 'Cherry' ]
+ [ 'Banana', 'lsj' ]
+ */
+```
+
 ## Diff btw == and ===
 
 ## What is for..in and for.. of
