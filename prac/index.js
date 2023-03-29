@@ -1,2 +1,4 @@
-let arr = [1,2,1,4,1,2,3]
-let set = new Set(arr);
+const person = { name: "Lydia" };
+Object.defineProperty(person, "age", { value: 21 });
+console.log(person);
+console.log(Object.keys(person));
