@@ -46,7 +46,6 @@ function getFlatArray(arr) {
     }
     return acc;
   }, []);
-  
 }
 
 const newArr = getFlatArray(myarr);
@@ -80,6 +79,17 @@ Expected Output
 ### Solution 1
 
 ```js
+let arr = str.split(",").reverse();
+
+let res = arr.reduce((acc, ele) => {
+  return { [ele]: acc };
+}, {});
+console.log(res);
+```
+
+### Solution 2
+
+```js
 let arr = str.split(",");
 
 // const recUsingArrow = (array, index = 0) =>
@@ -94,22 +104,6 @@ function rec(array, index) {
 }
 
 let obj = rec(arr, 0);
-console.log(obj);
-```
-
-### Solution 2
-
-```js
-let arr = str.split(",");
-
-let obj = {};
-
-obj[arr[arr.length - 1]] = {};
-
-for (let i = arr.length - 2; i >= 0; i--) {
-  obj[arr[i]] = { ...obj };
-  delete obj[arr[i + 1]];
-}
 console.log(obj);
 ```
 
