@@ -50,7 +50,7 @@ let newArr = fruits.slice(1, 4);
 [ 'Banana', 'Orange', 'Apple', 'Mango', 'Cherry', 'lsj' ]
 */
 
-let newArr =fruits.splice(1,4);
+let newArr = fruits.splice(1, 4);
 /*
  [ 'Orange', 'Apple', 'Mango', 'Cherry' ]
  [ 'Banana', 'lsj' ]
@@ -281,9 +281,25 @@ The rest parameter is an improved way to handle function parameters, allowing us
 
 ### Explain Event Propagation
 
-### Explain diff btween Event Bubbling and Event Capturing
+Event Propagation determines in which order the elements receive the event.
+
+### What is Event Bubbling and Event Capturing
+
+- Event bubbling is a process where an event first fires on target, then propagates up through its parent elements until it reaches the document object.
+
+- Event Capturing is a process where an event first fires on the root, then propagates down through its child elements until it reaches the target.
 
 ### How can we restrict Event Bubbling and Event Capturng behaviour
+
+```js
+event.stopPropagation();
+```
+
+### What is event Deligation?
+
+Event delegation is a technique that allows you to attach a single eventlistener to a parent element that will handle events for its child elements.
+
+- Instead of adding event listeners to each individual child element, you can take advantage of the event bubbling mechanism to capture events as they bubble up the DOM tree.
 
 ### What is diff between normal function and arrow function
 
