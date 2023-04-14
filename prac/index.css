@@ -1,0 +1,27 @@
+.container {
+  background-color: aqua;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  /* display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(2,1fr);
+  justify-content: center; 
+  align-items: center; */
+}
+
+.container > div {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  position : relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@media all and (min-width: 400px) and (max-width: 700px){
+  .container > div {
+    background-color: #fff;
+  }
+}
