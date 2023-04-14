@@ -245,6 +245,26 @@ The cors middleware can be configured to allow all origins, specific origins, or
 
 CORS is necessary to prevent malicious websites from accessing sensitive data from other websites. By restricting cross-origin requests, it provides an extra layer of security and protects users' data. However, it can also be a hindrance for legitimate web applications that need to make cross-origin requests. In these cases, configuring CORS properly can allow legitimate cross-origin requests to be made while maintaining security.
 
+## What is Stream?
+
+In Node.js, a stream is an abstract interface for working with streaming data. It is a way to read or write data in chunks, rather than reading or writing it all at once. Streams are designed to work with large amounts of data that would otherwise consume a lot of memory if read or written all at once.
+
+There are four types of streams in Node.js: Readable, Writable, Duplex, and Transform.
+
+- Readable streams are used for reading data from a source, such as a file, network socket, or HTTP response.
+
+- Writable streams are used for writing data to a destination, such as a file, network socket, or HTTP request.
+
+- Duplex streams are used for both reading and writing data. They represent a combination of a readable and writable stream.
+
+- Transform streams are a special type of duplex stream that can modify or transform the data as it passes through the stream.
+
+Streams are an important concept in Node.js because they allow developers to process data in real-time as it is being streamed, rather than waiting for the entire data set to be available before processing it. This makes Node.js well-suited for applications that involve large amounts of data or real-time data processing, such as web servers or data-intensive applications.
+
+## What is Buffer ?
+
+In Node.js, a buffer is a data structure used to represent a sequence of binary data. It is similar to an array of integers, but is designed specifically to work with binary data. Buffers are used to represent data in a format that can be transmitted over a network or stored in a file.
+
 ## What is rate limiting?
 
 Rate limiting in Node.js is a technique used to control the rate at which incoming requests are processed. It is used to prevent a single client or a group of clients from overwhelming a server with too many requests.
@@ -265,7 +285,7 @@ Implementing rate limiting can help improve the performance and reliability of y
 
 In Express, middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. Middleware functions can execute any code, modify the request and response objects, and end the request-response cycle by sending a response to the client or calling the next middleware function.
 
-##  What is the difference between Encryption and Hashing?
+## What is the difference between Encryption and Hashing?
 
 https://www.youtube.com/watch?v=jmtzX-NPFDc
 
