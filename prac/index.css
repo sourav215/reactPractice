@@ -1,27 +1,33 @@
 .container {
-  background-color: aqua;
-  width: 600px;
-  height: 400px;
-  margin: auto;
-  /* display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(2,1fr);
-  justify-content: center; 
-  align-items: center; */
+  height: 100vh;
+  width: 100vw;
+  background: teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c{
+  height: 100px;
+  background: orange;
+  position: sticky;
+  top: 30px;
+  z-index: 10;
+
 }
 
 .container > div {
-  height: 200px;
-  width: 200px;
-  background-color: red;
-  position : relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  background: coral;
+  height: 400px;
+  width: 400px;
+
+  position: sticky;
+  top: 10px;
 }
 
-@media all and (min-width: 400px) and (max-width: 700px){
-  .container > div {
-    background-color: #fff;
-  }
+.container > div > div {
+  background: yellow;
+  height: 100px;
+  width: 100px;
+
+  /* z-index: 20; */
 }
