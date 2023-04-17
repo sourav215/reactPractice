@@ -15,10 +15,16 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
-  z-index: -1;
   position: fixed;
   top: 0;
-  /* opacity: 0; */
+  transition: 1s;
+
+  opacity: 0;
+  z-index: -1;
+}
+.showoverlay {
+  opacity: 1;
+  z-index: 1;
 }
 
 .login-form {
@@ -26,10 +32,16 @@
   padding: 40px 30px;
   background-color: #fff;
   position: absolute;
-  top: 50%;
+  top: -50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 2s;
   border-radius: 5px;
+  z-index: 3;
+}
+
+.showlogin-form {
+  top: 50%;
 }
 .login-form > span {
   position: absolute;
