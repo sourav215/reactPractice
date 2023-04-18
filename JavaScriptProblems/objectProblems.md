@@ -512,3 +512,31 @@ const ans = data.reduce((acc, ele) => {
 
 console.log(ans);
 ```
+
+## Problem 12
+
+```js
+let obj = {
+  a: {
+    c: "a",
+    d: {
+      e: "b",
+    },
+  },
+  b: {
+    f: {
+      g: "c",
+      h: "d",
+      i: {
+        j: "def",
+        k: "abc",
+      },
+    },
+  },
+};
+
+/*
+Expected Output
+[]
+*/
+```
