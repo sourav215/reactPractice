@@ -537,6 +537,22 @@ let obj = {
 
 /*
 Expected Output
-[]
+[ 'a', 'c', 'd', 'e', 'b', 'f', 'g', 'h',  'i', 'j', 'k']
 */
+```
+
+### Solution
+
+```js
+let arr = [];
+function getKeys(obj) {
+  for (let key in obj) {
+    arr.push(key);
+    if (typeof obj[key] === "object") {
+      getKeys(obj[key]);
+    }
+  }
+}
+getKeys(obj);
+console.log(arr);
 ```
