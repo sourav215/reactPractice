@@ -1,0 +1,401 @@
+[
+  {
+    "_id": "user001",
+    "name": "Alice Johnson",
+    "age": 30,
+    "email": "alice@example.com",
+    "isActive": true,
+    "hobbies": ["reading", "cycling", "traveling"],
+    "education": [
+      {
+        "degreeCode": "CS101",
+        "year": 2014
+      },
+      {
+        "degreeCode": "DS202",
+        "year": 2016
+      }
+    ],
+    "scores": [
+      [80, 85],
+      [78, 90]
+    ],
+    "address": {
+      "street": "123 Main St",
+      "city": "New York",
+      "zip": "10001"
+    },
+    "projects": [
+      {
+        "title": "AI Chatbot",
+        "tech": ["Python", "TensorFlow"],
+        "completed": true
+      },
+      {
+        "title": "E-commerce Site",
+        "tech": ["React", "Node.js"],
+        "completed": false
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "categories": ["news", "updates"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2023-07-12T10:00:00.000Z"
+    }
+  },
+  {
+    "_id": "user002",
+    "name": "Bob Smith",
+    "age": 25,
+    "email": "bob@example.com",
+    "isActive": false,
+    "hobbies": ["gaming", "chess", "hiking"],
+    "education": [
+      {
+        "degreeCode": "CS101",
+        "year": 2018
+      }
+    ],
+    "scores": [
+      [70, 75],
+      [68, 72]
+    ],
+    "address": {
+      "street": "456 Elm St",
+      "city": "Boston",
+      "zip": "02110"
+    },
+    "projects": [
+      {
+        "title": "Smart Home App",
+        "tech": ["Flutter", "Firebase"],
+        "completed": true
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": false,
+        "sms": true,
+        "categories": ["alerts"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2022-01-15T09:00:00.000Z"
+    }
+  },
+  {
+    "_id": "user003",
+    "name": "Carol Lee",
+    "age": 28,
+    "email": "carol@example.com",
+    "isActive": true,
+    "hobbies": ["yoga", "painting"],
+    "education": [
+      {
+        "degreeCode": "UX303",
+        "year": 2015
+      }
+    ],
+    "scores": [[90, 92]],
+    "address": {
+      "street": "789 Pine St",
+      "city": "Seattle",
+      "zip": "98101"
+    },
+    "projects": [
+      {
+        "title": "Design System",
+        "tech": ["Figma", "Sketch"],
+        "completed": true
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "categories": ["design", "product"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2021-06-01T12:30:00.000Z"
+    }
+  },
+  {
+    "_id": "user004",
+    "name": "Daniel Kim",
+    "age": 35,
+    "email": "daniel@example.com",
+    "isActive": true,
+    "hobbies": ["guitar", "photography"],
+    "education": [
+      {
+        "degreeCode": "CS101",
+        "year": 2010
+      },
+      {
+        "degreeCode": "AI404",
+        "year": 2012
+      }
+    ],
+    "scores": [
+      [88, 89],
+      [85, 91]
+    ],
+    "address": {
+      "street": "321 Oak St",
+      "city": "Austin",
+      "zip": "73301"
+    },
+    "projects": [
+      {
+        "title": "Image Classifier",
+        "tech": ["Python", "Keras"],
+        "completed": true
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": false,
+        "sms": true,
+        "categories": ["AI", "vision"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2020-03-05T08:45:00.000Z"
+    }
+  },
+  {
+    "_id": "user005",
+    "name": "Eva Green",
+    "age": 22,
+    "email": "eva@example.com",
+    "isActive": true,
+    "hobbies": ["reading", "blogging"],
+    "education": [
+      {
+        "degreeCode": "DS202",
+        "year": 2020
+      }
+    ],
+    "scores": [[95, 93]],
+    "address": {
+      "street": "654 Cedar St",
+      "city": "Chicago",
+      "zip": "60601"
+    },
+    "projects": [
+      {
+        "title": "Blog CMS",
+        "tech": ["Node.js", "MongoDB"],
+        "completed": true
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": true,
+        "sms": true,
+        "categories": ["writing", "tech"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2021-11-20T14:00:00.000Z"
+    }
+  },
+  {
+    "_id": "user006",
+    "name": "Frank Wright",
+    "age": 40,
+    "email": "frank@example.com",
+    "isActive": false,
+    "hobbies": ["cooking", "woodworking"],
+    "education": [
+      {
+        "degreeCode": "CS101",
+        "year": 2005
+      }
+    ],
+    "scores": [[60, 65]],
+    "address": {
+      "street": "987 Birch St",
+      "city": "Denver",
+      "zip": "80201"
+    },
+    "projects": [
+      {
+        "title": "Legacy ERP",
+        "tech": ["Java", "Spring"],
+        "completed": false
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": false,
+        "sms": false,
+        "categories": []
+      }
+    },
+    "joinedAt": {
+      "$date": "2019-07-10T10:10:00.000Z"
+    }
+  },
+  {
+    "_id": "user007",
+    "name": "Grace Hall",
+    "age": 33,
+    "email": "grace@example.com",
+    "isActive": true,
+    "hobbies": ["gardening", "knitting"],
+    "education": [
+      {
+        "degreeCode": "UX303",
+        "year": 2012
+      },
+      {
+        "degreeCode": "DS202",
+        "year": 2014
+      }
+    ],
+    "scores": [[78, 80]],
+    "address": {
+      "street": "222 Willow St",
+      "city": "San Diego",
+      "zip": "92101"
+    },
+    "projects": [
+      {
+        "title": "Data Viz Dashboard",
+        "tech": ["D3.js", "Vue.js"],
+        "completed": true
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": true,
+        "sms": true,
+        "categories": ["design", "data"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2020-12-31T15:45:00.000Z"
+    }
+  },
+  {
+    "_id": "user008",
+    "name": "Henry Adams",
+    "age": 29,
+    "email": "henry@example.com",
+    "isActive": false,
+    "hobbies": ["photography", "running"],
+    "education": [
+      {
+        "degreeCode": "AI404",
+        "year": 2017
+      }
+    ],
+    "scores": [[84, 89]],
+    "address": {
+      "street": "901 Maple St",
+      "city": "Phoenix",
+      "zip": "85001"
+    },
+    "projects": [
+      {
+        "title": "Drone Navigation",
+        "tech": ["C++", "ROS"],
+        "completed": false
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": false,
+        "sms": true,
+        "categories": ["robotics"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2023-01-10T16:30:00.000Z"
+    }
+  },
+  {
+    "_id": "user009",
+    "name": "Irene Diaz",
+    "age": 27,
+    "email": "irene@example.com",
+    "isActive": true,
+    "hobbies": ["traveling", "calligraphy"],
+    "education": [
+      {
+        "degreeCode": "DS202",
+        "year": 2019
+      }
+    ],
+    "scores": [[91, 92]],
+    "address": {
+      "street": "333 Spruce St",
+      "city": "San Jose",
+      "zip": "95112"
+    },
+    "projects": [
+      {
+        "title": "Travel Recommender",
+        "tech": ["Python", "Scikit-learn"],
+        "completed": true
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "categories": ["travel", "AI"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2022-09-09T11:00:00.000Z"
+    }
+  },
+  {
+    "_id": "user010",
+    "name": "Jake Turner",
+    "age": 24,
+    "email": "jake@example.com",
+    "isActive": true,
+    "hobbies": ["coding", "climbing"],
+    "education": [
+      {
+        "degreeCode": "CS101",
+        "year": 2022
+      }
+    ],
+    "scores": [
+      [88, 85],
+      [90, 92]
+    ],
+    "address": {
+      "street": "444 Cypress St",
+      "city": "Atlanta",
+      "zip": "30301"
+    },
+    "projects": [
+      {
+        "title": "Portfolio Website",
+        "tech": ["HTML", "CSS", "JS"],
+        "completed": true
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": true,
+        "sms": true,
+        "categories": ["career"]
+      }
+    },
+    "joinedAt": {
+      "$date": "2023-02-02T10:30:00.000Z"
+    }
+  }
+]
