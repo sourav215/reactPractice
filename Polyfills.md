@@ -167,6 +167,9 @@ function showDetails(a, b) {
 
 const bind1 = showDetails.mybind(obj, 2, 3);
 bind1();
+
+const bind2 = showDetails.mybind(obj);
+bind2(2, 3);
 ```
 
 ## Map, Filter, Reduce
